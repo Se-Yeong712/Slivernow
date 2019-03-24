@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="s2017s16.kr.hs.mirim.silvernow">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true">
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".GymActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".EyeActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".AlarmSetActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".EyeExerciseActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".StatusActivity"
+            android:theme="@style/AppTheme" />
+
+        <receiver android:name=".Alarm_Receiver" />
+
+        <service
+            android:name=".RingtonePlayingService"
+            android:enabled="true" />
+
+        <activity
+            android:name=".GymLegActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".LegActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".LegExerciseActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".CountdownActivity"
+            android:theme="@style/HalfTrans" />
+        <activity
+            android:name=".TimelineActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".alarm"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".CurrentActivity"
+            android:theme="@style/AppTheme"/>
+    </application>
+
+</manifest>

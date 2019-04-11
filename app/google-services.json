@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1042138817540",
+    "firebase_url": "https://silvernow-492a8.firebaseio.com",
+    "project_id": "silvernow-492a8",
+    "storage_bucket": "silvernow-492a8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1042138817540:android:c57589065f0e60b1",
+        "android_client_info": {
+          "package_name": "s2017s16.kr.hs.mirim.silvernow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1042138817540-ruhujlgl2dbm8hu2uiq6v2vvjpghh8na.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "s2017s16.kr.hs.mirim.silvernow",
+            "certificate_hash": "d9af9debd7215bfc8652489f9383f092082e35b3"
+          }
+        },
+        {
+          "client_id": "1042138817540-am8cfh5uijg1agcsme99m1c5s585roc1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqu6GO8elII7yxXXuGpYNsIP8K75G1FdI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1042138817540-am8cfh5uijg1agcsme99m1c5s585roc1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

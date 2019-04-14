@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Slivernow.iml" filepath="$PROJECT_DIR$/Slivernow.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/silvernow.iml" filepath="$PROJECT_DIR$/silvernow.iml" />
+      <module fileurl="file://C:\Android_Project\Slivernow\silvernow.iml" filepath="C:\Android_Project\Slivernow\silvernow.iml" />
     </modules>
   </component>
 </project>

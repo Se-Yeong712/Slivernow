@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity{
         b_eye.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent2 = new Intent(MainActivity.this, GymActivity.class);
+                Intent intent2 = new Intent(MainActivity.this, GymEyeActivity.class);
                 startActivity(intent2);
 
 //                Intent intent = new Intent(MainActivity.this, GymActivity.class);

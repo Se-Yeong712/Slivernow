@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="s2017s16.kr.hs.mirim.silvernow.GymActivity"
+    tools:context="s2017s16.kr.hs.mirim.silvernow.GymEyeActivity"
     android:orientation="vertical"
     android:background="@color/BackGround">
 
@@ -21,7 +21,7 @@
     </android.support.v7.widget.Toolbar>
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/gym_recycler_view"
+        android:id="@+id/gym_eye_recycler_view"
         app:layoutManager="LinearLayoutManager"
         android:layout_width="match_parent"
         android:layout_height="match_parent">

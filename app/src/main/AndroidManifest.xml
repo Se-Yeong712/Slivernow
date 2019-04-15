@@ -21,10 +21,13 @@
             android:name=".MainActivity"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".GymActivity"
+            android:name=".GymEyeActivity"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".EyeActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".GymLegActivity"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".AlarmSetActivity"
@@ -42,9 +45,6 @@
             android:name=".RingtonePlayingService"
             android:enabled="true" />
 
-        <activity
-            android:name=".GymLegActivity"
-            android:theme="@style/AppTheme" />
         <activity
             android:name=".LegActivity"
             android:theme="@style/AppTheme" />

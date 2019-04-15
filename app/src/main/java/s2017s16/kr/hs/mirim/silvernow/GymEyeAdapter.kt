@@ -16,12 +16,12 @@ import kotlinx.android.synthetic.main.recycler_gymitem.view.*
 
 import java.util.ArrayList
 
-class GymAdapter(private val dataList: ArrayList<GymDataModel>, private val listener : ItemDragListener)
-    : RecyclerView.Adapter<GymAdapter.ViewHolder>(), ItemActionListener {
+class GymAdapter(private val dataList: ArrayList<GymDataModel>)
+    : RecyclerView.Adapter<GymAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent?.context)
                 .inflate(R.layout.recycler_gymitem, parent, false)
-        return ViewHolder(view, listener)
+        return ViewHolder(view)
     }
 
     override fun onBindViewHolder(ViewHolder: ViewHolder, i: Int) {
@@ -36,22 +36,7 @@ class GymAdapter(private val dataList: ArrayList<GymDataModel>, private val list
         return dataList?.size ?: 0
     }
 
-    override fun onItemMoved(from: Int, to: Int) {
-        if (from == to) {
-            return
-        }
-
-        val fromItem = dataList.removeAt(from)
-        dataList.add(to, fromItem)
-        notifyItemMoved(from, to)
-    }
-
-    override fun onItemSwiped(position: Int) {
-        dataList.removeAt(position)
-        notifyItemRemoved(position)
-    }
-
-    class ViewHolder(itemView: View, listener: ItemDragListener) : RecyclerView.ViewHolder(itemView) {
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         init {
 

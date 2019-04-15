@@ -10,16 +10,12 @@ import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.helper.ItemTouchHelper
 import android.widget.Toolbar
 import kotlinx.android.synthetic.main.activity_gym_eye.*
+import kotlinx.android.synthetic.main.*;
 
 
-class GymEyeActivity : AppCompatActivity(), ItemDragListener {
-
-    override fun onStartDrag(holder: GymAdapter.ViewHolder) {
-        itemTouchHelper.startDrag(holder)
-    }
+class GymEyeActivity : AppCompatActivity() {
 
     private lateinit var gymAdapter: GymAdapter
-    private lateinit var itemTouchHelper : ItemTouchHelper
 
     //리사이클러에 받아올
     var dataList_eye = arrayListOf<GymDataModel>(
@@ -32,16 +28,16 @@ class GymEyeActivity : AppCompatActivity(), ItemDragListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gym_eye)
 
-        gymAdapter = GymAdapter(dataList_eye, this)
+        gymAdapter = GymAdapter(dataList_eye)
 
         gym_eye_recycler_view.apply {
             adapter = gymAdapter
             layoutManager = LinearLayoutManager(context)
             addItemDecoration(DividerItemDecoration(context, LinearLayoutManager.VERTICAL))
         }
-        itemTouchHelper = ItemTouchHelper(ItemTouchHelperCallback(gymAdapter))
-        itemTouchHelper.attachToRecyclerView(gym_eye_recycler_view)
 
 
     }
+
+
 }

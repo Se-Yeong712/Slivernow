@@ -7,20 +7,13 @@ import android.os.Bundle
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.helper.ItemTouchHelper
 import android.widget.Toolbar
-import kotlinx.android.synthetic.main.activity_gym_eye.*
 import kotlinx.android.synthetic.main.activity_gym_leg.*
 
 
-class GymLegActivity : AppCompatActivity(), ItemDragListener {
-
-    override fun onStartDrag(holder: GymAdapter.ViewHolder) {
-        itemTouchHelper.startDrag(holder)
-    }
+class GymLegActivity : AppCompatActivity() {
 
     private lateinit var gymAdapter: GymAdapter
-    private lateinit var itemTouchHelper : ItemTouchHelper
 
     //리사이클러에 받아올
     var dataList_leg = arrayListOf<GymDataModel>(
@@ -32,20 +25,19 @@ class GymLegActivity : AppCompatActivity(), ItemDragListener {
             GymDataModel("다리 휘두르기", R.drawable.leg)
 
     )
+    //첫번째 리사이클러뷰와 연결
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gym_leg)
 
-        gymAdapter = GymAdapter(dataList_leg, this)
+        gymAdapter = GymAdapter(dataList_leg)
 
         gym_leg_recycler_view.apply {
             adapter = gymAdapter
             layoutManager = LinearLayoutManager(context)
             addItemDecoration(DividerItemDecoration(context, LinearLayoutManager.VERTICAL))
         }
-        itemTouchHelper = ItemTouchHelper(ItemTouchHelperCallback(gymAdapter))
-        itemTouchHelper.attachToRecyclerView(gym_leg_recycler_view)
 
 
     }

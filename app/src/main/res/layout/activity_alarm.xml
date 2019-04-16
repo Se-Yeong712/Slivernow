@@ -7,6 +7,7 @@
     tools:context="s2017s16.kr.hs.mirim.silvernow.alarm"
     android:orientation="vertical"
     android:background="@color/BackGround">
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -18,28 +19,35 @@
             android:src="@drawable/logo"
             android:layout_gravity="center"/>
     </android.support.v7.widget.Toolbar>
+
     <ImageView
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:src="@drawable/alal"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textSize="40sp"
+        android:layout_margin="30dp"
+        android:textSize="35sp"
         android:textColor="#002c64"
         android:text="운동할 시간입니다!"/>
+
     <Button
         android:id="@+id/b_stop"
         android:layout_marginTop="5dp"
-        android:layout_width="300dp"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:background="@drawable/exercise_start_btn"
         android:layout_gravity="center"
+        android:padding="10dp"
         android:text="알람 끄기"
-        android:textSize="25dp"
-        android:textColor="#ffffff" />
+        android:textSize="30dp"
+        android:textColor="#ffffff"
+        />
+
 </LinearLayout>

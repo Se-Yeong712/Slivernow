@@ -20,46 +20,51 @@
             android:src="@drawable/logo"
             android:layout_gravity="center"/>
     </android.support.v7.widget.Toolbar>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="10dp"
-        android:gravity="center">
+        android:gravity="center"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="30dp">
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
             android:layout_marginTop="20dp">
+
             <LinearLayout
-                android:layout_marginTop="70dp"
-                android:layout_marginBottom="70dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:background="@drawable/tab3_btn"
-                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="50dp"
                 >
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="다리 운동"
-                    android:textColor="#000000"
-                    android:textSize="17pt"
                     android:gravity="center"
+                    android:text="발끝 당기기"
+                    android:textColor="#000000"
+                    android:textSize="40sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="10dp"
                     />
+
                 <ImageView
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
+                    android:layout_width="264dp"
+                    android:layout_height="220dp"
                     android:src="@drawable/leg"
                     android:layout_marginBottom="10dp"
                     android:layout_gravity="center"
+                    android:padding="10dp"
                     />
 
                 <TextView
@@ -70,7 +75,7 @@
                     android:layout_marginRight="8dp"
                     android:text="1. 초점을 맞추지 않은 채로 가볍게 왼쪽을 보세요."
                     android:textColor="@android:color/black"
-                    android:textSize="11pt" />
+                    android:textSize="25sp" />
                 <TextView
                     android:layout_marginTop="5dp"
                     android:layout_width="wrap_content"
@@ -79,7 +84,7 @@
                     android:layout_marginRight="8dp"
                     android:text="2. 눈을 왼쪽에 위치한 채 1초 정도 유지합니다."
                     android:textColor="@android:color/black"
-                    android:textSize="11pt"/>
+                    android:textSize="25sp"/>
                 <TextView
                     android:layout_marginTop="5dp"
                     android:layout_width="wrap_content"
@@ -88,7 +93,7 @@
                     android:layout_marginRight="8dp"
                     android:text="3. 방향을 반대쪽으로 돌려 오른쪽을 보세요."
                     android:textColor="@android:color/black"
-                    android:textSize="11pt" />
+                    android:textSize="25sp" />
                 <TextView
                     android:layout_marginTop="5dp"
                     android:layout_width="wrap_content"
@@ -97,7 +102,7 @@
                     android:layout_marginRight="8dp"
                     android:text="4. 똑같이 1초 정도 유지합니다."
                     android:textColor="@android:color/black"
-                    android:textSize="11pt"/>
+                    android:textSize="25sp"/>
 
                 <TextView
                     android:layout_marginTop="5dp"
@@ -107,21 +112,20 @@
                     android:layout_marginRight="8dp"
                     android:text="5. 위의 방법을 반복합니다."
                     android:textColor="@android:color/black"
-                    android:textSize="11pt"/>
+                    android:textSize="25sp"/>
 
                 <Button
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="40dp"
                     android:id="@+id/b_exercise"
-                    android:layout_width="300dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="350dp"
                     android:layout_height="wrap_content"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="5dp"
                     android:background="@drawable/exercise_start_btn"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
                     android:text="지금 시작하기"
                     android:textColor="#ffffff"
-                    android:textSize="14pt" />
+                    android:textSize="30sp"
+                    />
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

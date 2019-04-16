@@ -62,13 +62,14 @@
     </LinearLayout>
     </LinearLayout>
     </ScrollView>-->
+
     <ImageButton
         android:id="@+id/btn_alarm"
-        android:src="@drawable/notification"
-        android:background="@android:color/transparent"
-        android:layout_marginTop="70dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:src="@drawable/notification"
+        android:background="@android:color/transparent"
+        android:layout_marginTop="100dp"
         android:onClick="showAlarmDialog"
         android:text="알람 설정"
         android:layout_gravity="center"
@@ -79,16 +80,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
-        android:layout_marginTop="10dp"
-        android:text="운동할 시간에 알람을 맞추세요 !"
+        android:layout_margin="30dp"
+        android:text="그림을 눌러 \n 운동할 시간에 \n 알림을 맞추세요!"
         android:textSize="35sp"
-        android:textColor="#002c64"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:text="위의 종을 눌러주세요!"
-        android:textSize="20dp"
         android:textColor="#002c64"/>
 </LinearLayout>

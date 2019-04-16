@@ -29,7 +29,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="운동별 운동현황"
+        android:text="날짜별 운동현황"
         android:textColor="#000000"
         android:gravity="center"/>
 

@@ -1,3 +1,4 @@
+
 package s2017s16.kr.hs.mirim.silvernow;
 
 import android.net.Uri;
@@ -9,10 +10,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ListView;
 import android.widget.Toast;
 import android.widget.TextView;
 
@@ -23,13 +20,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.ArrayList;
-import java.util.List;
-
-
 public class CurrentActivity extends AppCompatActivity {
     Toolbar toolbar;
-    TextView day,ex,set;
+    TextView day, ex, set;
 
     FirebaseAuth firebaseAuth;
     DatabaseReference databaseReference;
@@ -47,14 +40,13 @@ public class CurrentActivity extends AppCompatActivity {
         android.support.v7.app.ActionBar actionbar = getSupportActionBar();
         actionbar.setDisplayHomeAsUpEnabled(true);
 
-
-
         firebaseAuth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference().child("");
 
         child = new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
 
             }
 
@@ -72,20 +64,21 @@ public class CurrentActivity extends AppCompatActivity {
             public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
 
             }
-    }
-
-            @Override
-            public boolean onOptionsItemSelected(MenuItem item) {
-                switch (item.getItemId()) {
-                    case android.R.id.home:
-                        finish();
-                        return true;
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-        }
+        };
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+
             case R.id.action_settings:
 
                 Toast.makeText(getApplicationContext(), "환경설정 버튼 클릭됨", Toast.LENGTH_LONG).show();

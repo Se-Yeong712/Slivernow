@@ -158,38 +158,50 @@
                 android:id="@+id/tab3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:layout_marginTop="18dp"
-                    android:layout_marginBottom="30dp">
+                    android:layout_marginBottom="30dp"
+                    android:layout_gravity="center"
+                    >
 
                     <ScrollView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginBottom="10dp">
+                        android:layout_marginBottom="10dp"
+                        android:layout_gravity="center"
+                        >
 
                         <android.support.constraint.ConstraintLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="30dp"
                             android:layout_marginTop="10dp"
-                            android:layout_marginBottom="30dp">
+                            android:layout_marginBottom="30dp"
+                            >
 
                             <Button
                                 android:id="@+id/b_eye"
                                 android:layout_gravity="center_horizontal"
-                                android:layout_width="170dp"
+                                android:layout_width="160dp"
                                 android:layout_height="220dp"
                                 android:background="@drawable/tab3_btn"
                                 android:drawableTop="@drawable/eye"
-                                android:padding="3dp"
+                                android:paddingTop="8dp"
+                                android:paddingLeft="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="10dp"
                                 android:layout_margin="10dp"
                                 android:text="눈"
                                 android:textColor="#000000"
-                                android:textSize="30sp"
+                                android:textSize="25sp"
                                 app:layout_constraintTop_toTopOf="parent"
                                 app:layout_constraintLeft_toLeftOf="parent"
                                 />
@@ -197,14 +209,18 @@
                             <Button
                                 android:id="@+id/b_gym"
                                 android:layout_gravity="center_horizontal"
-                                android:layout_width="170dp"
+                                android:layout_width="160dp"
                                 android:layout_height="220dp"
                                 android:background="@drawable/tab3_btn"
                                 android:drawableTop="@drawable/yoga"
+                                android:paddingTop="8dp"
+                                android:paddingLeft="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="10dp"
                                 android:layout_margin="10dp"
                                 android:text="맨몸체조"
                                 android:textColor="#000000"
-                                android:textSize="30sp"
+                                android:textSize="25sp"
                                 app:layout_constraintTop_toTopOf="parent"
                                 app:layout_constraintLeft_toRightOf="@id/b_eye"
                                 />
@@ -212,15 +228,18 @@
                             <Button
                                 android:id="@+id/b_arm"
                                 android:layout_gravity="center_horizontal"
-                                android:layout_width="170dp"
+                                android:layout_width="160dp"
                                 android:layout_height="220dp"
                                 android:background="@drawable/tab3_btn"
                                 android:drawableTop="@drawable/muscle"
-                                android:padding="3dp"
+                                android:paddingTop="8dp"
+                                android:paddingLeft="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="10dp"
                                 android:layout_margin="10dp"
                                 android:text="팔"
                                 android:textColor="#000000"
-                                android:textSize="30sp"
+                                android:textSize="25sp"
                                 app:layout_constraintLeft_toLeftOf="parent"
                                 app:layout_constraintTop_toBottomOf="@id/b_eye"
                                 />
@@ -228,15 +247,18 @@
                             <Button
                                 android:id="@+id/b_leg"
                                 android:layout_gravity="center_horizontal"
-                                android:layout_width="170dp"
+                                android:layout_width="160dp"
                                 android:layout_height="220dp"
                                 android:background="@drawable/tab3_btn"
                                 android:drawableTop="@drawable/speed"
-                                android:padding="3dp"
+                                android:paddingTop="8dp"
+                                android:paddingLeft="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="10dp"
                                 android:layout_margin="10dp"
                                 android:text="다리"
                                 android:textColor="#000000"
-                                android:textSize="30sp"
+                                android:textSize="25sp"
                                 app:layout_constraintLeft_toRightOf="@id/b_arm"
                                 app:layout_constraintTop_toBottomOf="@id/b_gym"
                                 />
@@ -244,15 +266,18 @@
                             <Button
                                 android:id="@+id/b_waist"
                                 android:layout_gravity="center_horizontal"
-                                android:layout_width="170dp"
+                                android:layout_width="160dp"
                                 android:layout_height="220dp"
                                 android:background="@drawable/tab3_btn"
                                 android:drawableTop="@drawable/stretching"
-                                android:padding="3dp"
+                                android:paddingTop="8dp"
+                                android:paddingLeft="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="10dp"
                                 android:layout_margin="10dp"
                                 android:text="허리"
                                 android:textColor="#000000"
-                                android:textSize="30sp"
+                                android:textSize="25sp"
                                 app:layout_constraintTop_toBottomOf="@id/b_arm"
                                 app:layout_constraintLeft_toLeftOf="parent"
                                 />
@@ -260,15 +285,18 @@
                             <Button
                                 android:id="@+id/b_citizen"
                                 android:layout_gravity="center_horizontal"
-                                android:layout_width="170dp"
+                                android:layout_width="160dp"
                                 android:layout_height="220dp"
                                 android:background="@drawable/tab3_btn"
                                 android:drawableTop="@drawable/gymnastics"
-                                android:padding="3dp"
+                                android:paddingTop="8dp"
+                                android:paddingLeft="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="10dp"
                                 android:layout_margin="10dp"
                                 android:text="국민체조"
                                 android:textColor="#000000"
-                                android:textSize="30sp"
+                                android:textSize="25sp"
                                 app:layout_constraintTop_toBottomOf="@id/b_leg"
                                 app:layout_constraintLeft_toRightOf="@id/b_arm"
                                 />

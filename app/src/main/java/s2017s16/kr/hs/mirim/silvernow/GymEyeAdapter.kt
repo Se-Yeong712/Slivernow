@@ -9,42 +9,45 @@ import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
-import kotlinx.android.synthetic.main.recycler_gymitem.view.*
-
 import java.util.ArrayList
 
-class GymAdapter(private val dataList: ArrayList<GymDataModel>)
-    : RecyclerView.Adapter<GymAdapter.ViewHolder>() {
+class GymEyeAdapter(val context: Context, private val dataList: ArrayList<GymDataModel>, val itemClick: (GymDataModel) -> Unit)
+    : RecyclerView.Adapter<GymEyeAdapter.ViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent?.context)
-                .inflate(R.layout.recycler_gymitem, parent, false)
-        return ViewHolder(view)
-    }
-
-    override fun onBindViewHolder(ViewHolder: ViewHolder, i: Int) {
-        var itemTitle = dataList[i].item_title
-        var itemImage = dataList[i].item_image
-
-        ViewHolder.itemView.textview_gym_item.setText(itemTitle)
-        ViewHolder.itemView.imageview_gym_item.setImageResource(itemImage);
+        val view = LayoutInflater.from(context).inflate(R.layout.recycler_gymitem, parent, false)
+        return ViewHolder(view, itemClick)
     }
 
     override fun getItemCount(): Int {
         return dataList?.size ?: 0
     }
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    override fun onBindViewHolder(ViewHolder: ViewHolder, position: Int) {
+        ViewHolder?.bind(dataList[position], context)
+    }
+
+    inner class ViewHolder(itemView: View?, itemClick: (GymDataModel) -> Unit) : RecyclerView.ViewHolder(itemView) {
 
         init {
 
         }
 
-        fun bind(item: GymDataModel) {
+        // xml에 있는
+        var dataTitle = itemView?.findViewById<TextView>(R.id.textview_gym_item)
+        var dataImage = itemView?.findViewById<ImageView>(R.id.imageview_gym_item)
 
+        fun bind(item: GymDataModel, context: Context) {
+            dataTitle?.text = item.item_title
+            dataImage?.setImageResource(R.drawable.eye)
+
+            itemView.setOnClickListener { itemClick(item) }
         }
+
     }
+
+
 
 }

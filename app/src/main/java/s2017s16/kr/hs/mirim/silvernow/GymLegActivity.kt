@@ -9,13 +9,20 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.widget.Toolbar
 import kotlinx.android.synthetic.main.activity_gym_leg.*
+import android.R.menu
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.widget.Toast
+
+
 
 
 class GymLegActivity : AppCompatActivity() {
 
-    private lateinit var gymAdapter: GymAdapter
+    private lateinit var gymAdapter: GymLegAdapter
 
-    //리사이클러에 받아올
+    //리사이클러뷰에 받아올 데이터
     var dataList_leg = arrayListOf<GymDataModel>(
             GymDataModel("발끝 당기기",R.drawable.leg),
             GymDataModel("다리 폈다 굽히기",R.drawable.leg),
@@ -25,20 +32,42 @@ class GymLegActivity : AppCompatActivity() {
             GymDataModel("다리 휘두르기", R.drawable.leg)
 
     )
-    //첫번째 리사이클러뷰와 연결
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gym_leg)
 
-        gymAdapter = GymAdapter(dataList_leg)
+        gymAdapter = GymLegAdapter(dataList_leg)
 
         gym_leg_recycler_view.apply {
             adapter = gymAdapter
             layoutManager = LinearLayoutManager(context)
             addItemDecoration(DividerItemDecoration(context, LinearLayoutManager.VERTICAL))
         }
-
-
     }
+
+    //메뉴
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.getItemId()) {
+            android.R.id.home -> {
+                finish()
+                return true
+            }
+
+            R.id.action_settings -> {
+
+                Toast.makeText(applicationContext, "환경설정 버튼 클릭됨", Toast.LENGTH_LONG).show()
+                return true
+            }
+        }
+        return false
+    }//onOptionsItemSelected
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        //return super.onCreateOptionsMenu(menu);
+        val menuInflater = menuInflater
+        menuInflater.inflate(R.menu.menu, menu)
+        return true
+    }
+
 }

@@ -7,6 +7,7 @@
     tools:context="s2017s16.kr.hs.mirim.silvernow.GymLegActivity"
     android:orientation="vertical"
     android:background="@color/BackGround">
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"

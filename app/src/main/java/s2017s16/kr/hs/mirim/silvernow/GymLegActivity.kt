@@ -7,15 +7,15 @@ import android.os.Bundle
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.support.v7.widget.helper.ItemTouchHelper
 import android.widget.Toolbar
 import kotlinx.android.synthetic.main.activity_gym_leg.*
+import kotlinx.android.synthetic.main.*;
 import android.R.menu
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.Toast
-
-
 
 
 class GymLegActivity : AppCompatActivity() {
@@ -30,20 +30,25 @@ class GymLegActivity : AppCompatActivity() {
             GymDataModel("빠르게 걷기",R.drawable.leg),
             GymDataModel("계단 오르내리기",R.drawable.leg),
             GymDataModel("다리 휘두르기", R.drawable.leg)
-
     )
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gym_leg)
 
-        gymAdapter = GymLegAdapter(dataList_leg)
+        //터치시 해당 운동에 맞는 페이지로 이동
+        gymAdapter = GymLegAdapter(this, dataList_leg) {
+            GymDataModel -> val nextIntent = Intent(this, LegActivity::class.java)
+            startActivity(nextIntent)
+        }
 
         gym_leg_recycler_view.apply {
             adapter = gymAdapter
             layoutManager = LinearLayoutManager(context)
             addItemDecoration(DividerItemDecoration(context, LinearLayoutManager.VERTICAL))
         }
+
     }
 
     //메뉴
@@ -69,5 +74,6 @@ class GymLegActivity : AppCompatActivity() {
         menuInflater.inflate(R.menu.menu, menu)
         return true
     }
+
 
 }

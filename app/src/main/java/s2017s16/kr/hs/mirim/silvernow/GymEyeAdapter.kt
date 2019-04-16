@@ -41,7 +41,7 @@ class GymEyeAdapter(val context: Context, private val dataList: ArrayList<GymDat
 
         fun bind(item: GymDataModel, context: Context) {
             dataTitle?.text = item.item_title
-            dataImage?.setImageResource(R.drawable.eye)
+            dataImage?.setImageResource(item.item_image)
 
             itemView.setOnClickListener { itemClick(item) }
         }

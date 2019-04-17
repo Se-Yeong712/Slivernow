@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="s2017s16.kr.hs.mirim.silvernow.LegStretchExerciseActivity"
+    android:orientation="vertical"
+    android:background="@color/BackGround">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/Toolbar">
+        <ImageView
+            style="@style/ToolbarLogo"/>
+    </android.support.v7.widget.Toolbar>
+    <LinearLayout
+        style="@style/ExerciseLinear">
+        <TextView
+            style="@style/ExerciseTitle"
+            android:text="다리 스트레칭"/>
+        <RelativeLayout
+            style="@style/ExerciseRelative">
+            <ImageView
+                android:id="@+id/gif"
+                android:src="@drawable/leg_stretch"
+                style="@style/ExerciseGif"/>
+        </RelativeLayout>
+        <ImageView
+            android:id="@+id/count_gif"
+            style="@style/ExerciseCountGif" />
+        <Button
+            android:id="@+id/b_stop"
+            style="@style/ExerciseStop"/>
+        <Button
+            android:id="@+id/b_main"
+            style="@style/ExerciseMain"/>
+    </LinearLayout>
+</LinearLayout>

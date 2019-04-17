@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="s2017s16.kr.hs.mirim.silvernow.ArmActivity"
+    android:orientation="vertical"
+    android:background="@color/BackGround">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/Toolbar">
+        <ImageView
+            style="@style/ToolbarLogo"/>
+    </android.support.v7.widget.Toolbar>
+    <FrameLayout
+        style="@style/ExerciseCategoryFrame">
+        <LinearLayout
+            style="@style/ExerciseCategoryLinear1">
+            <ScrollView
+                style="@style/ExerciseCategoryScroll">
+                <LinearLayout
+                    style="@style/ExerciseCategoryLinear2">
+                    <Button
+                        android:id="@+id/b_arm_all"
+                        style="@style/Category"
+                        android:text="온몸 팔 운동"
+                        android:drawableTop="@drawable/muscle"
+                        />
+                    <Button
+                        android:id="@+id/b_arm_stretch"
+                        style="@style/Category"
+                        android:text="팔 스트레칭"
+                        android:drawableTop="@drawable/muscle"
+                        />
+                    <Button
+                        android:id="@+id/b_arm_shoulder"
+                        style="@style/Category"
+                        android:text="어깨 돌리기 운동"
+                        android:drawableTop="@drawable/muscle"
+                        />
+
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

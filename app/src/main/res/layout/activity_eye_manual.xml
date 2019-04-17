@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="s2017s16.kr.hs.mirim.silvernow.EyeManualActivity"
+    android:orientation="vertical"
+    android:background="#E8E8E8"
+    android:layout_gravity="center">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/Toolbar">
+        <ImageView
+            style="@style/ToolbarLogo"/>
+    </android.support.v7.widget.Toolbar>
+
+    <FrameLayout
+       style="@style/ExerciseManualFrame">
+
+        <LinearLayout
+            style="@style/ExerciseManualLinear1">
+            <ScrollView
+                style="@style/ExerciseManualScroll">
+                <LinearLayout
+                    android:background="@drawable/tab3_btn"
+                    style="@style/ExerciseManualLinear2">
+                    <TextView
+                    style="@style/ExerciseManualTitle"
+                    android:text="눈 굴리기 운동" />
+                    <ImageView
+                    style="@style/ExerciseManualImage"
+                    android:src="@drawable/eye"/>
+
+                    <TextView
+                    android:id="@+id/t_name"
+                    style="@style/ExerciseManualText"
+                    android:text="1. 초점을 맞추지 않은 채로 가볍게 왼쪽을 보세요.\n2. 눈을 왼쪽에 위치한 채 1초 정도 유지합니다.\n3. 방향을 반대쪽으로 돌려 오른쪽을 보세요.\n4. 똑같이 1초 정도 유지합니다.\n5. 위의 방법을 반복합니다." />
+
+                    <Button
+                    android:id="@+id/b_exercise"
+                    style="@style/ExerciseManualStart"
+                    android:background="@drawable/exercise_start_btn"
+                    android:text="지금 시작하기" />
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </FrameLayout>
+</FrameLayout>

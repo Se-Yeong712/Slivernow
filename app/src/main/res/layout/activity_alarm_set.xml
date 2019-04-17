@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="s2017s16.kr.hs.mirim.silvernow.AlarmSetActivity"
+    android:orientation="vertical"
+    android:background="#E8E8E8">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent">
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:src="@drawable/logo"
+            android:layout_gravity="center"/>
+    </android.support.v7.widget.Toolbar>
+    <!--<ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp">
+
+        <TimePicker
+
+            android:id="@+id/time_picker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numbersSelectorColor="#00A2FF"
+            android:headerBackground="#00A2FF"
+            android:numbersBackgroundColor="#c3c3c3"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:id="@+id/btn_start"
+            android:text="시작"/>
+
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:id="@+id/btn_finish"
+            android:text="종료" />
+    </LinearLayout>
+    </LinearLayout>
+    </ScrollView>-->
+
+    <ImageButton
+        android:id="@+id/btn_alarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/notification"
+        android:background="@android:color/transparent"
+        android:layout_marginTop="100dp"
+        android:onClick="showAlarmDialog"
+        android:text="알람 설정"
+        android:layout_gravity="center"
+        />
+    <TextView
+        android:id="@+id/text_alarm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_margin="30dp"
+        android:text="그림을 눌러 \n 운동할 시간에 \n 알림을 맞추세요!"
+        android:textSize="35sp"
+        android:textColor="#002c64"/>
+</LinearLayout>

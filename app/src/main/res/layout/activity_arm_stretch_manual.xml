@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="s2017s16.kr.hs.mirim.silvernow.ArmStretchManualActivity"
+    android:orientation="vertical"
+    android:background="#E8E8E8"
+    android:layout_gravity="center">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/Toolbar">
+        <ImageView
+            style="@style/ToolbarLogo"/>
+    </android.support.v7.widget.Toolbar>
+
+    <FrameLayout
+        style="@style/ExerciseManualFrame">
+
+        <LinearLayout
+            style="@style/ExerciseManualLinear1">
+            <ScrollView
+                style="@style/ExerciseManualScroll">
+                <LinearLayout
+                    style="@style/ExerciseManualLinear2">
+                    <TextView
+                        style="@style/ExerciseManualTitle"
+                        android:text="팔 스트레칭" />
+                    <ImageView
+                        style="@style/ExerciseManualImage"
+                        android:src="@drawable/muscle"/>
+
+                    <TextView
+                        android:id="@+id/t_name"
+                        style="@style/ExerciseManualText"
+                        android:text="1. 양 다리를 어깨 넓이만큼 벌려줍니다.\n2. 왼쪽 팔을 앞을 향해 쭉 폅니다\n3. 오른쪽 팔을 왼쪽 팔에 겁니다.\n4. 팔을 오른쪽으로 당기되, 고개는 왼쪽을 향하도록 해줍니다.\n5. 반대편도 똑같이 반복해줍니다." />
+
+                    <Button
+                        android:id="@+id/b_exercise"
+                        style="@style/ExerciseManualStart"
+                        android:background="@drawable/exercise_start_btn"
+                        android:text="지금 시작하기" />
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </FrameLayout>
+</FrameLayout>

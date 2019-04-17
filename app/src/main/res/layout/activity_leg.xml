@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="s2017s16.kr.hs.mirim.silvernow.LegActivity"
+    android:orientation="vertical"
+    android:background="@color/BackGround">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/Toolbar">
+        <ImageView
+            style="@style/ToolbarLogo"/>
+    </android.support.v7.widget.Toolbar>
+    <FrameLayout
+       style="@style/ExerciseCategoryFrame">
+        <LinearLayout
+            style="@style/ExerciseCategoryLinear1">
+            <ScrollView
+                style="@style/ExerciseCategoryScroll">
+                <LinearLayout
+                    style="@style/ExerciseCategoryLinear2">
+                    <Button
+                        android:id="@+id/b_leg_up"
+                        style="@style/Category"
+                        android:text="다리 올리기"
+                        android:drawableTop="@drawable/leg"
+                        />
+                    <Button
+                        android:id="@+id/b_leg_ankle"
+                        style="@style/Category"
+                        android:text="발끝 당기기 운동"
+                        android:drawableTop="@drawable/leg"
+                        />
+                    <Button
+                        android:id="@+id/b_leg_stretch"
+                        style="@style/Category"
+                        android:text="다리 스트레칭"
+                        android:drawableTop="@drawable/leg"
+                        />
+                    <Button
+                        android:id="@+id/b_leg_squat"
+                        style="@style/Category"
+                        android:text="스쿼트"
+                        android:drawableTop="@drawable/leg"
+                        />
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="s2017s16.kr.hs.mirim.silvernow.EyeActivity"
+    android:orientation="vertical"
+    android:background="@color/BackGround">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/Toolbar">
+        <ImageView
+            style="@style/ToolbarLogo"/>
+    </android.support.v7.widget.Toolbar>
+    <FrameLayout
+        style="@style/ExerciseCategoryFrame">
+        <LinearLayout
+            style="@style/ExerciseCategoryLinear1">
+            <ScrollView
+                style="@style/ExerciseCategoryScroll">
+                <LinearLayout
+                    style="@style/ExerciseCategoryLinear2">
+                    <Button
+                        android:id="@+id/b_eye_roll"
+                        style="@style/Category"
+                        android:text="눈 굴리기 운동"
+                        android:drawableTop="@drawable/eye"
+                        />
+                    <Button
+                        android:id="@+id/b_eye_mas"
+                        style="@style/Category"
+                        android:text="눈 마사지"
+                        android:drawableTop="@drawable/eye"
+                        />
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

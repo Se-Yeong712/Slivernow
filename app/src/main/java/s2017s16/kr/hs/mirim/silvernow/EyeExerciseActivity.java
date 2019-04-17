@@ -11,6 +11,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextSwitcher;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -21,6 +23,27 @@ public class EyeExerciseActivity extends AppCompatActivity {
     Button b_stop;
     Button b_main;
     MediaPlayer mediaPlayer;
+
+    TextView tv_title; //Intent로 전달받을 페이지 제목 - 운동 이름
+    TextSwitcher ts_num_set;
+    TextView tv_num_set; // Intent로 전달받을 세트수
+    TextSwitcher ts_num_set_times;
+    TextView tv_num_set_times; // Intent로 전달받을 세트당 횟수
+
+    //TextSwitcher는 <TextSwitcher></TextSwitcher>안에 있는 Text가 바뀔 때 애니메이션 넣을 수 있을 것 같아서 해둔거
+
+    //사용 예시 - sleep으로 지연시키고 setText하는 방식
+    /*
+        try {
+        mSwitcher.setText("ON");
+        Thread.sleep(1000);
+        mSwitcher.setText("OFF");
+        Thread.sleep(1000);
+    } catch (InterruptedException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    }*/
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +81,8 @@ public class EyeExerciseActivity extends AppCompatActivity {
             }
         });
 
+
+        /*
         ImageView gif = findViewById(R.id.gif);
         GlideDrawableImageViewTarget target = new GlideDrawableImageViewTarget(gif);
         Glide.with(this).load(R.raw.eye).into(gif);
@@ -65,6 +90,10 @@ public class EyeExerciseActivity extends AppCompatActivity {
         ImageView count_gif = findViewById(R.id.count_gif);
         GlideDrawableImageViewTarget count_target = new GlideDrawableImageViewTarget(count_gif);
         Glide.with(this).load(R.raw.eye_count).into(count_gif);
+        */
+
+
+
     }
 
     @Override

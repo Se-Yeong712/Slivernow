@@ -19,80 +19,151 @@
             android:src="@drawable/logo"
             android:layout_gravity="center"/>
     </android.support.v7.widget.Toolbar>
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp"
-        android:background="@drawable/tab3_btn">
-
-        <TextView
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        >
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="눈 운동"
-            android:textColor="#000000"
-            android:textSize="45sp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
             android:gravity="center"
-            android:textStyle="bold"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="10dp"
-            />
+            android:paddingBottom="30dp"
+            android:padding="10dp"
+            android:background="@drawable/tab3_btn">
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center">
+            <TextView
+                android:id="@+id/textview_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="눈 운동"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                />
 
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:id="@+id/gif"
+                    android:layout_width="210dp"
+                    android:layout_height="210dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:foregroundGravity="center" />
+
+                <Button
+                    android:layout_width="240dp"
+                    android:layout_height="240dp"
+                    android:background="@drawable/ring"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="15dp"
+                >
+                <TextSwitcher
+                    android:id="@+id/texts_num_set"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+                    <TextView
+                        android:id="@+id/textview_num_set"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="40sp"
+                        android:textStyle="bold"
+                        android:singleLine="true"
+                        android:ellipsize="marquee"
+                        />
+                </TextSwitcher>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="세트"
+                    android:textColor="#000000"
+                    android:textSize="28sp"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    />
+
+                <TextSwitcher
+                    android:id="@+id/texts_num_set_times"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/textview_num_set_times"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="40sp"
+                        android:textStyle="bold"
+                        android:singleLine="true"
+                        android:ellipsize="marquee"
+                        />
+                </TextSwitcher>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="번 남았습니다"
+                    android:textColor="#000000"
+                    android:textSize="28sp"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    />
+            </LinearLayout>
+            <!--
             <ImageView
-                android:id="@+id/gif"
-                android:layout_width="220dp"
-                android:layout_height="220dp"
+                android:id="@+id/count_gif"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:foregroundGravity="center" />
+            -->
 
             <Button
-                android:layout_width="280dp"
-                android:layout_height="280dp"
-                android:background="@drawable/ring"
-                android:layout_margin="30dp"/>
+                android:id="@+id/b_stop"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/exercise_start_btn"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:text="노래 멈추기"
+                android:textColor="#ffffff"
+                android:textSize="25sp"/>
 
-        </RelativeLayout>
+            <Button
+                android:id="@+id/b_main"
+                android:layout_marginTop="10dp"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/exercise_start_btn"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:text="메인화면으로 돌아가기"
+                android:textColor="#ffffff"
+                android:textSize="25sp"/>
 
-        <ImageView
-            android:id="@+id/count_gif"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:foregroundGravity="center" />
-
-        <Button
-            android:id="@+id/b_stop"
-            android:layout_marginTop="20dp"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/exercise_start_btn"
-            android:layout_gravity="center"
-            android:padding="10dp"
-            android:text="노래 멈추기"
-            android:textColor="#ffffff"
-            android:textSize="30sp"/>
-
-        <Button
-            android:id="@+id/b_main"
-            android:layout_marginTop="10dp"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/exercise_start_btn"
-            android:layout_gravity="center"
-            android:padding="10dp"
-            android:text="메인화면으로 돌아가기"
-            android:textColor="#ffffff"
-            android:textSize="30sp"/>
-
-    </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

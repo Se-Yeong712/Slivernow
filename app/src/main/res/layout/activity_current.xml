@@ -21,18 +21,6 @@
 
     </android.support.v7.widget.Toolbar>
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/cur"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="날짜별 운동현황"
-        android:textColor="#000000"
-        android:gravity="center"/>
-
 <!--<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -98,9 +86,18 @@
             />
     </LinearLayout>-->
 
-<ListView
-    android:id="@+id/list_current"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"></ListView>
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/current_chart"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        />
 
+    <!--
+    <ListView
+        android:id="@+id/list_current"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></ListView>
+        -->
 </LinearLayout>

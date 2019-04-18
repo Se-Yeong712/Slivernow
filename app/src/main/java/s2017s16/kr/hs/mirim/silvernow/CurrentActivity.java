@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.EventLogTags;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -14,12 +15,17 @@ import android.widget.Toast;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.charts.Chart;
 import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.formatter.YAxisValueFormatter;
+import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
+import com.github.mikephil.charting.utils.ViewPortHandler;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -27,6 +33,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -40,8 +47,6 @@ public class CurrentActivity extends AppCompatActivity {
     FirebaseDatabase Database;
     ChildEventListener child;
 
-    private LineChart lineChart;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +57,7 @@ public class CurrentActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         android.support.v7.app.ActionBar actionbar = getSupportActionBar();
         actionbar.setDisplayHomeAsUpEnabled(true);
+
 
         firebaseAuth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference().child("");
@@ -84,6 +90,8 @@ public class CurrentActivity extends AppCompatActivity {
             }
         };
 
+
+
         ArrayList<String> labelList = new ArrayList<String>();
         ArrayList<Integer> valList = new ArrayList<Integer>();
 
@@ -113,8 +121,9 @@ public class CurrentActivity extends AppCompatActivity {
         BarChart barChart = findViewById(R.id.current_chart);
 
         ArrayList<BarEntry> entries = new ArrayList<>();
+
         for(int i=0; i < valList.size();i++){
-            entries.add(new BarEntry((Integer) valList.get(i), i));
+            entries.add(new BarEntry(valList.get(i), i));
         }
 
         BarDataSet depenses = new BarDataSet (entries, "날짜별 운동현황"); // 변수로 받아서 넣어줘도 됨
@@ -127,11 +136,28 @@ public class CurrentActivity extends AppCompatActivity {
         }
 
         BarData data = new BarData(labels,depenses); // 라이브러리 v3.x 사용하면 에러 발생함
-        depenses.setColors(ColorTemplate.COLORFUL_COLORS); //
+        //depenses.setColors(ColorTemplate.VORDIPLOM_COLORS);
+        depenses.setColors(ColorTemplate.JOYFUL_COLORS);
+
+        barChart.setDescription("");
+        barChart.getLegend().setEnabled(false);
 
         barChart.setData(data);
         barChart.animateXY(1000,1000);
         barChart.invalidate();
+
+        YAxis leftAxis = barChart.getAxisLeft();
+        leftAxis.setLabelCount(6, false);
+        leftAxis.setGranularityEnabled(true);
+        leftAxis.setGranularity(0.1f);
+
+        Legend l = barChart.getLegend();
+        l.setForm(Legend.LegendForm.SQUARE);
+        l.setFormSize(9f);
+        l.setTextSize(11f);
+        l.setXEntrySpace(4f);
+
+
     }
 
 

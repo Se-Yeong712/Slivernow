@@ -82,6 +82,6 @@
         android:gravity="center"
         android:layout_margin="30dp"
         android:text="그림을 눌러 \n 운동할 시간에 \n 알림을 맞추세요!"
-        android:textSize="35sp"
+        android:textSize="25sp"
         android:textColor="#002c64"/>
 </LinearLayout>

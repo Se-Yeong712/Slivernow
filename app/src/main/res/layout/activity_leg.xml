@@ -53,7 +53,7 @@
                     android:gravity="center"
                     android:text="발끝 당기기"
                     android:textColor="#000000"
-                    android:textSize="40sp"
+                    android:textSize="30sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="10dp"
                     />

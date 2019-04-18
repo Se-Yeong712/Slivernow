@@ -7,6 +7,8 @@
     tools:context="s2017s16.kr.hs.mirim.silvernow.CountdownActivity"
     android:orientation="vertical"
     android:gravity="center">
+
+<!--
     <ImageView
         android:id="@+id/count_gif"
         android:layout_width="match_parent"
@@ -15,4 +17,6 @@
         android:layout_centerVertical="true"
         android:foregroundGravity="center"
         android:layout_gravity="center"/>
+    -->
+
 </LinearLayout>

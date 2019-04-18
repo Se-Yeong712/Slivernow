@@ -15,11 +15,14 @@ public class CountdownActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_countdown);
 
+
         ImageView count_gif = findViewById(R.id.count_gif);
         CountdownActivity.GlideDrawableImageViewTarget count_target = new CountdownActivity.GlideDrawableImageViewTarget(count_gif);
         Glide.with(this).load(R.raw.countdown2).into(count_gif);
         startCountDown();
+
     }
+
     private void startCountDown() {
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {

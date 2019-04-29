@@ -33,6 +33,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.lang.reflect.Array;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -46,6 +47,9 @@ public class CurrentActivity extends AppCompatActivity {
     DatabaseReference databaseReference;
     FirebaseDatabase Database;
     ChildEventListener child;
+
+    BarChart number_barChart;
+    BarChart day_barChart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,35 +94,50 @@ public class CurrentActivity extends AppCompatActivity {
             }
         };
 
+        //파이어베이스에서 가져온 운동 종류 - 많은 순으로 최대 7개 갖고오면 되지 않을까
+        ArrayList<String> number_labelList = new ArrayList();
+        ArrayList<Integer> number_valList = new ArrayList();
 
 
-        ArrayList<String> labelList = new ArrayList<String>();
-        ArrayList<Integer> valList = new ArrayList<Integer>();
+        //파이어베이스에서 가져온 날짜별 운동 개수
+        ArrayList<String> day_labelList = new ArrayList();
+        ArrayList<Integer> day_valList = new ArrayList();
 
-        labelList.add("4/15");
-        labelList.add("4/16");
-        labelList.add("4/17");
-        labelList.add("4/18");
-        labelList.add("4/19");
-        labelList.add("4/20");
-        labelList.add("4/21");
 
-        valList.add(5);
-        valList.add(7);
-        valList.add(6);
-        valList.add(2);
-        valList.add(7);
-        valList.add(1);
-        valList.add(2);
+        number_labelList.add("눈운동");
+        number_labelList.add("팔운동");
+        number_labelList.add("다리운동");
 
-        BarChartGraph(labelList, valList);
+        number_valList.add(1);
+        number_valList.add(3);
+        number_valList.add(6);
+
+
+        day_labelList.add("4/15");
+        day_labelList.add("4/16");
+        day_labelList.add("4/17");
+        day_labelList.add("4/18");
+        day_labelList.add("4/19");
+        day_labelList.add("4/20");
+        day_labelList.add("4/21");
+
+        day_valList.add(5);
+        day_valList.add(7);
+        day_valList.add(6);
+        day_valList.add(2);
+        day_valList.add(7);
+        day_valList.add(1);
+        day_valList.add(2);
+
+        number_barChart = findViewById(R.id.current_number_chart);
+        day_barChart = findViewById(R.id.current_day_chart);
+
+        BarChartGraph(number_labelList, number_valList, number_barChart);
+        BarChartGraph(day_labelList, day_valList, day_barChart);
         //List listA = new ArrayList();
-
     }
 
-    private void BarChartGraph(ArrayList<String> labelList, ArrayList<Integer> valList) {
-        // BarChart 메소드
-        BarChart barChart = findViewById(R.id.current_chart);
+    private void BarChartGraph(ArrayList<String> labelList, ArrayList<Integer> valList, BarChart barChart) {
 
         ArrayList<BarEntry> entries = new ArrayList<>();
 
@@ -126,7 +145,19 @@ public class CurrentActivity extends AppCompatActivity {
             entries.add(new BarEntry(valList.get(i), i));
         }
 
-        BarDataSet depenses = new BarDataSet (entries, "날짜별 운동현황"); // 변수로 받아서 넣어줘도 됨
+        BarDataSet depenses = null;
+        if (barChart==number_barChart) {
+            depenses = new BarDataSet (entries, "운동별 현황");
+        } else if (barChart==day_barChart) {
+            depenses = new BarDataSet (entries, "날짜별 현황");
+        }
+
+        Legend number_legend = number_barChart.getLegend();
+        number_legend.setPosition(Legend.LegendPosition.BELOW_CHART_CENTER);
+
+        Legend day_legend = day_barChart.getLegend();
+        day_legend.setPosition(Legend.LegendPosition.BELOW_CHART_CENTER);
+
         depenses.setAxisDependency(YAxis.AxisDependency.LEFT);
         depenses.setValueTextSize(10);
 

@@ -1,6 +1,7 @@
 
 package s2017s16.kr.hs.mirim.silvernow;
 
+import android.graphics.Color;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -168,7 +169,8 @@ public class CurrentActivity extends AppCompatActivity {
 
         BarData data = new BarData(labels,depenses); // 라이브러리 v3.x 사용하면 에러 발생함
         //depenses.setColors(ColorTemplate.VORDIPLOM_COLORS);
-        depenses.setColors(ColorTemplate.JOYFUL_COLORS);
+        //depenses.setColors(ColorTemplate.JOYFUL_COLORS);
+        depenses.setColor(Color.rgb(0,136,255));
 
         barChart.setDescription("");
         barChart.getLegend().setEnabled(false);

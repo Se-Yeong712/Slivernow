@@ -3,9 +3,12 @@ package s2017s16.kr.hs.mirim.silvernow;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -33,6 +36,8 @@ public class EyeExerciseActivity extends AppCompatActivity {
     TextSwitcher ts_num_set_times;
     TextView tv_num_set_times; // Intent로 전달받을 세트당 횟수
 
+    private  Boolean isRunning = true;
+
     //TextSwitcher는 <TextSwitcher></TextSwitcher>안에 있는 Text가 바뀔 때 애니메이션 넣을 수 있을 것 같아서 해둔거
 
     //사용 예시 - sleep으로 지연시키고 setText하는 방식
@@ -53,6 +58,12 @@ public class EyeExerciseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eyeexercise);
+
+        tv_num_set = (TextView)findViewById(R.id.textview_num_set);
+        tv_num_set_times=(TextView) findViewById(R.id.textview_num_set_times);
+
+
+
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("");
@@ -81,9 +92,12 @@ public class EyeExerciseActivity extends AppCompatActivity {
         b_main.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(EyeExerciseActivity.this,EyeActivity.class);
+/*                Intent intent = new Intent(EyeExerciseActivity.this,EyeActivity.class);
                 Toast.makeText(getApplicationContext(), "운동을 종료합니다", Toast.LENGTH_LONG).show();
-                startActivity(intent);
+                startActivity(intent);*/
+
+                isRunning = false;
+
             }
         });
 
@@ -116,9 +130,70 @@ public class EyeExerciseActivity extends AppCompatActivity {
 //            }
 //        }
 //    })).start();
-        }//onCreate
+
+        timeThread t = new timeThread();
+        t.start();
+        if(isRunning==false){
+            Log.d("suyoung","제발 러닝 끝나서 성공");
+        }
+
+     }//onCreate
+
+    public class timeThread extends Thread{
+        int a=5;
+        int count=0;
+        int b=2;
+        int i=0;
+        @Override
+        public void run(){
+
+            while (isRunning){
+                Message msg = new Message();
 
 
+                if(count%2==0){
+                    b=2;
+                }else{
+                    b=1;
+                }
+
+
+
+                msg.arg1 = a;
+                msg.arg2 = b;
+
+                if(b==1){
+                    --a;
+                }
+
+                handler.sendMessage(msg);
+                try {
+                    count++;
+                    Thread.sleep(4000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                    return;
+                }
+
+                if(count==10){
+                    isRunning = false;
+                }
+            }
+            if(isRunning==false){
+                Intent intent = new Intent(EyeExerciseActivity.this, PopupActivity.class);
+                startActivityForResult(intent,1);
+            }
+
+        }
+    }
+
+    Handler handler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            tv_num_set.setText(msg.arg1 +"");
+            tv_num_set_times.setText(msg.arg2+"");
+        }
+    };
 
 
     @Override

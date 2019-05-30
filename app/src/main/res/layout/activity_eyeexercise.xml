@@ -149,7 +149,7 @@
                 android:background="@drawable/exercise_start_btn"
                 android:layout_gravity="center"
                 android:padding="5dp"
-                android:text="메인화면으로 돌아가기"
+                android:text="운동 그만하기"
                 android:textColor="#ffffff"
                 android:textSize="25sp"/>
 

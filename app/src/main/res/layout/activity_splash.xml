@@ -6,17 +6,11 @@
     android:layout_height="match_parent"
     tools:context="s2017s16.kr.hs.mirim.silvernow.SplashActivity"
     android:orientation="vertical"
-    android:background="#00a0fd">
+    android:background="#0088ff">
     <ImageView
-        android:layout_marginTop="130dp"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/logo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/splash"
         android:layout_gravity="center" />
-    <TextView
-        android:layout_marginTop="230dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Co. 앤듀로이드"/>
+
 </LinearLayout>

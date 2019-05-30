@@ -13,11 +13,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorAccent">
-        <ImageView
-            android:layout_width="120dp"
-            android:layout_height="60dp"
-            android:src="@drawable/logo"
-            android:layout_gravity="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:text="SILVER NOW"
+            android:textSize="20dp"
+
+            android:textAlignment="center"
+            android:layout_marginLeft="350px"
+            />
     </android.support.v7.widget.Toolbar>
     <ScrollView
         android:layout_width="match_parent"
@@ -45,28 +50,11 @@
                 android:layout_marginTop="5dp"
                 />
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center">
+          <ImageView
+              android:id="@+id/gif"
+              android:layout_width="200dp"
+              android:layout_height="200dp" />
 
-                <ImageView
-                    android:id="@+id/gif"
-                    android:layout_width="210dp"
-                    android:layout_height="210dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:foregroundGravity="center" />
-
-                <Button
-                    android:layout_width="240dp"
-                    android:layout_height="240dp"
-                    android:background="@drawable/ring"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    />
-
-            </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -75,6 +63,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_marginBottom="15dp"
+                android:gravity="center"
                 >
                 <TextSwitcher
                     android:id="@+id/texts_num_set"

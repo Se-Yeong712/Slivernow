@@ -18,6 +18,25 @@ public class CurrentPost {
     public int exer3;
     public int exer4;
 
+    public String getDay() {
+        return day;
+    }
+
+    public int getExer1() {
+        return exer1;
+    }
+
+    public int getExer2() {
+        return exer2;
+    }
+
+    public int getExer3() {
+        return exer3;
+    }
+
+    public int getExer4() {
+        return exer4;
+    }
 
     public CurrentPost(){
         // Default constructor required for calls to DataSnapshot.getValue(FirebasePost.class)

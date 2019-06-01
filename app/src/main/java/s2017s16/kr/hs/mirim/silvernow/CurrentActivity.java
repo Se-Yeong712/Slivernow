@@ -34,6 +34,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.lang.reflect.Array;
@@ -50,7 +51,7 @@ import java.util.Map;
 
 public class CurrentActivity extends AppCompatActivity {
     Toolbar toolbar;
-    TextView day, ex, set;
+    TextView txt1;
 
     FirebaseAuth firebaseAuth;
     DatabaseReference databaseReference;
@@ -62,10 +63,16 @@ public class CurrentActivity extends AppCompatActivity {
 
 
     String[] exercise = {"눈 운동 ","다리 운동","팔 운동","허리 운동"};
-    ArrayList days = new ArrayList();
+    String[] days = new String[7];
+
+    ArrayList<Integer> arrExer = new ArrayList<Integer>();
+    ArrayList<Integer> arrDay = new ArrayList<Integer>();
+
+    int[] dayVal = new int[7];
+    int[] exerVal = new int[4];
 
     Calendar cal = new GregorianCalendar(Locale.KOREA);
-    SimpleDateFormat fm = new SimpleDateFormat("MM월 dd일");
+    SimpleDateFormat fm = new SimpleDateFormat("MM월dd일");
     String searchDay,searchExer;
 
     @Override
@@ -79,21 +86,108 @@ public class CurrentActivity extends AppCompatActivity {
         android.support.v7.app.ActionBar actionbar = getSupportActionBar();
         actionbar.setDisplayHomeAsUpEnabled(true);
 
+        txt1 = (TextView)findViewById(R.id.txt1);
+
         firebaseAuth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference().child("");
 
-/*        databaseReference.child("board").child("05월 27일").child("눈 운동").setValue(1);
-        databaseReference.child("board").child("05월 27일").child("다리 운동").setValue(2);
-        databaseReference.child("board").child("05월 27일").child("팔 운동").setValue(3);
-        databaseReference.child("board").child("05월 27일").child("허리 운동").setValue(5);*/
-
         cal.setTime(new Date());
-        cal.add(Calendar.DAY_OF_YEAR,-3);
+        cal.add(Calendar.DAY_OF_YEAR,-6);
 
-        searchDay = fm.format(cal.getTime());
-        postFirebaseDatabase(true);
+        //searchDay = fm.format(cal.getTime());
+        //postFirebaseDatabase(true);
+
+        setDays();
+        getFirebaseDatabase();
 
 
+
+
+        //List listA = new ArrayList();
+    }
+
+/*    public void postFirebaseDatabase(boolean add){
+
+        String day = searchDay;
+        int exer1 = 1;
+        int exer2 = 5;
+        int exer3 = 2;
+        int exer4 = 3;
+
+        databaseReference = FirebaseDatabase.getInstance().getReference();
+        Map<String, Object> childUpdates = new HashMap<>();
+        Map<String, Object> postValues = null;
+        if(add){
+            CurrentPost post = new CurrentPost(day, exer1, exer2, exer3,exer4);
+            postValues = post.toMap();
+        }
+        childUpdates.put("/board1/" + searchDay, postValues);
+        databaseReference.updateChildren(childUpdates);
+    }*/
+
+    public void getFirebaseDatabase(){
+
+        Database = FirebaseDatabase.getInstance();
+
+        databaseReference = Database.getReference("board1");
+
+
+        ValueEventListener postListener = new ValueEventListener() {
+
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                    CurrentPost get = postSnapshot.getValue(CurrentPost.class);
+                    String day = get.day;
+                    int[] set={get.exer1,get.exer2,get.exer3,get.exer4};
+
+                    dataValue(day,set);
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        };
+        databaseReference.addValueEventListener(postListener);
+
+    }
+
+    public void setDays(){
+        for(int i=0;i<days.length;i++){
+            days[i] = fm.format(cal.getTime());
+            cal.add(Calendar.DAY_OF_YEAR,1);
+            //Toast.makeText(getApplicationContext(),"date" + days[i], Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void dataValue(String day,int set[]){
+        for(int i=0;i<days.length;i++){
+            if(day.equalsIgnoreCase(days[i])){
+
+                arrDay.add(set[0]+set[1]+set[2]+set[3]);
+                dayVal[i] = set[0]+set[1]+set[2]+set[3];
+            }
+        }
+        if(day.equalsIgnoreCase(days[6])){
+
+            exerVal[0]=set[0];
+            exerVal[1]=set[1];
+            exerVal[2]=set[2];
+            exerVal[3]=set[3];
+
+        }
+
+       // txt1.setText();
+        drawGraph();
+
+    }
+
+    public void drawGraph(){
         //파이어베이스에서 가져온 운동 종류 - 많은 순으로 최대 7개 갖고오면 되지 않을까
         ArrayList<String> number_labelList = new ArrayList();
         ArrayList<Integer> number_valList = new ArrayList();
@@ -103,60 +197,26 @@ public class CurrentActivity extends AppCompatActivity {
         ArrayList<String> day_labelList = new ArrayList();
         ArrayList<Integer> day_valList = new ArrayList();
 
-
-        number_labelList.add("눈운동");
-        number_labelList.add("팔운동");
-        number_labelList.add("다리운동");
-
-        number_valList.add(1);
-        number_valList.add(3);
-        number_valList.add(6);
+        for(int i=0;i<exercise.length;i++){
+            number_labelList.add(exercise[i]);
+            number_valList.add(exerVal[i]);
+        }
 
 
-        day_labelList.add("4/15");
-        day_labelList.add("4/16");
-        day_labelList.add("4/17");
-        day_labelList.add("4/18");
-        day_labelList.add("4/19");
-        day_labelList.add("4/20");
-        day_labelList.add("4/21");
 
-        day_valList.add(5);
-        day_valList.add(7);
-        day_valList.add(6);
-        day_valList.add(2);
-        day_valList.add(7);
-        day_valList.add(1);
-        day_valList.add(2);
+        for(int i=0;i<days.length;i++){
+            day_labelList.add(days[i]);
+            day_valList.add(dayVal[i]);
+
+        }
+
+
 
         number_barChart = findViewById(R.id.current_number_chart);
         day_barChart = findViewById(R.id.current_day_chart);
 
         BarChartGraph(number_labelList, number_valList, number_barChart);
         BarChartGraph(day_labelList, day_valList, day_barChart);
-        //List listA = new ArrayList();
-    }
-    public void postFirebaseDatabase(boolean add){
-
-        String day = searchDay;
-        int exer1 = 2;
-        int exer2 = 4;
-        int exer3 = 3;
-        int exer4 = 1;
-
-        databaseReference = FirebaseDatabase.getInstance().getReference();
-        Map<String, Object> childUpdates = new HashMap<>();
-        Map<String, Object> postValues = null;
-        if(add){
-            CurrentPost post = new CurrentPost(day, exer1, exer2, exer3,exer4);
-            postValues = post.toMap();
-        }
-        childUpdates.put("/board/" + searchDay, postValues);
-        databaseReference.updateChildren(childUpdates);
-    }
-
-    public void addDay(){
-        cal.add(Calendar.DAY_OF_YEAR,1);
 
     }
 

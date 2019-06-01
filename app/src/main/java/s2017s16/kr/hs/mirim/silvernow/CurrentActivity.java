@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.EventLogTags;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -33,11 +34,18 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.lang.reflect.Array;
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 public class CurrentActivity extends AppCompatActivity {
@@ -52,6 +60,14 @@ public class CurrentActivity extends AppCompatActivity {
     BarChart number_barChart;
     BarChart day_barChart;
 
+
+    String[] exercise = {"눈 운동 ","다리 운동","팔 운동","허리 운동"};
+    ArrayList days = new ArrayList();
+
+    Calendar cal = new GregorianCalendar(Locale.KOREA);
+    SimpleDateFormat fm = new SimpleDateFormat("MM월 dd일");
+    String searchDay,searchExer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,37 +79,20 @@ public class CurrentActivity extends AppCompatActivity {
         android.support.v7.app.ActionBar actionbar = getSupportActionBar();
         actionbar.setDisplayHomeAsUpEnabled(true);
 
-
         firebaseAuth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference().child("");
 
-        child = new ChildEventListener() {
-            @Override
-            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+/*        databaseReference.child("board").child("05월 27일").child("눈 운동").setValue(1);
+        databaseReference.child("board").child("05월 27일").child("다리 운동").setValue(2);
+        databaseReference.child("board").child("05월 27일").child("팔 운동").setValue(3);
+        databaseReference.child("board").child("05월 27일").child("허리 운동").setValue(5);*/
 
+        cal.setTime(new Date());
+        cal.add(Calendar.DAY_OF_YEAR,-3);
 
-            }
+        searchDay = fm.format(cal.getTime());
+        postFirebaseDatabase(true);
 
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        };
 
         //파이어베이스에서 가져온 운동 종류 - 많은 순으로 최대 7개 갖고오면 되지 않을까
         ArrayList<String> number_labelList = new ArrayList();
@@ -137,6 +136,30 @@ public class CurrentActivity extends AppCompatActivity {
         BarChartGraph(day_labelList, day_valList, day_barChart);
         //List listA = new ArrayList();
     }
+    public void postFirebaseDatabase(boolean add){
+
+        String day = searchDay;
+        int exer1 = 2;
+        int exer2 = 4;
+        int exer3 = 3;
+        int exer4 = 1;
+
+        databaseReference = FirebaseDatabase.getInstance().getReference();
+        Map<String, Object> childUpdates = new HashMap<>();
+        Map<String, Object> postValues = null;
+        if(add){
+            CurrentPost post = new CurrentPost(day, exer1, exer2, exer3,exer4);
+            postValues = post.toMap();
+        }
+        childUpdates.put("/board/" + searchDay, postValues);
+        databaseReference.updateChildren(childUpdates);
+    }
+
+    public void addDay(){
+        cal.add(Calendar.DAY_OF_YEAR,1);
+
+    }
+
 
     private void BarChartGraph(ArrayList<String> labelList, ArrayList<Integer> valList, BarChart barChart) {
 
@@ -192,6 +215,8 @@ public class CurrentActivity extends AppCompatActivity {
 
 
     }
+
+
 
 
     @Override

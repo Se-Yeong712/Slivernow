@@ -24,6 +24,8 @@ import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.github.mikephil.charting.formatter.YAxisValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
@@ -58,18 +60,14 @@ public class CurrentActivity extends AppCompatActivity {
     FirebaseDatabase Database;
     ChildEventListener child;
 
-    BarChart number_barChart;
-    BarChart day_barChart;
-
-
     String[] exercise = {"눈 운동 ","다리 운동","팔 운동","허리 운동"};
     String[] days = new String[7];
 
     ArrayList<Integer> arrExer = new ArrayList<Integer>();
     ArrayList<Integer> arrDay = new ArrayList<Integer>();
 
-    int[] dayVal = new int[7];
-    int[] exerVal = new int[4];
+    int[] dayVal = new int[7]; // 날짜별 세트수
+    int[] exerVal = new int[4]; // 운동별 세트수
 
     Calendar cal = new GregorianCalendar(Locale.KOREA);
     SimpleDateFormat fm = new SimpleDateFormat("MM월dd일");
@@ -99,10 +97,6 @@ public class CurrentActivity extends AppCompatActivity {
 
         setDays();
         getFirebaseDatabase();
-
-
-
-
         //List listA = new ArrayList();
     }
 
@@ -143,9 +137,7 @@ public class CurrentActivity extends AppCompatActivity {
                     int[] set={get.exer1,get.exer2,get.exer3,get.exer4};
 
                     dataValue(day,set);
-
                 }
-
             }
 
             @Override
@@ -168,30 +160,24 @@ public class CurrentActivity extends AppCompatActivity {
     public void dataValue(String day,int set[]){
         for(int i=0;i<days.length;i++){
             if(day.equalsIgnoreCase(days[i])){
-
                 arrDay.add(set[0]+set[1]+set[2]+set[3]);
                 dayVal[i] = set[0]+set[1]+set[2]+set[3];
             }
         }
         if(day.equalsIgnoreCase(days[6])){
-
             exerVal[0]=set[0];
             exerVal[1]=set[1];
             exerVal[2]=set[2];
             exerVal[3]=set[3];
-
         }
-
-       // txt1.setText();
+        // txt1.setText();
         drawGraph();
-
     }
 
     public void drawGraph(){
-        //파이어베이스에서 가져온 운동 종류 - 많은 순으로 최대 7개 갖고오면 되지 않을까
+        //파이어베이스에서 가져온 운동 종류
         ArrayList<String> number_labelList = new ArrayList();
         ArrayList<Integer> number_valList = new ArrayList();
-
 
         //파이어베이스에서 가져온 날짜별 운동 개수
         ArrayList<String> day_labelList = new ArrayList();
@@ -202,26 +188,18 @@ public class CurrentActivity extends AppCompatActivity {
             number_valList.add(exerVal[i]);
         }
 
-
-
         for(int i=0;i<days.length;i++){
             day_labelList.add(days[i]);
             day_valList.add(dayVal[i]);
-
         }
 
-
-
-        number_barChart = findViewById(R.id.current_number_chart);
-        day_barChart = findViewById(R.id.current_day_chart);
-
-        BarChartGraph(number_labelList, number_valList, number_barChart);
-        BarChartGraph(day_labelList, day_valList, day_barChart);
-
+        NumberBarChartGraph(number_labelList, number_valList);
+        DayBarChartGraph(day_labelList, day_valList);
     }
 
+    private void NumberBarChartGraph(ArrayList<String> labelList, ArrayList<Integer> valList) {
 
-    private void BarChartGraph(ArrayList<String> labelList, ArrayList<Integer> valList, BarChart barChart) {
+        BarChart number_barChart = findViewById(R.id.current_number_chart);
 
         ArrayList<BarEntry> entries = new ArrayList<>();
 
@@ -230,19 +208,14 @@ public class CurrentActivity extends AppCompatActivity {
         }
 
         BarDataSet depenses = null;
-        if (barChart==number_barChart) {
-            depenses = new BarDataSet (entries, "운동별 현황");
-        } else if (barChart==day_barChart) {
-            depenses = new BarDataSet (entries, "날짜별 현황");
-        }
+        depenses = new BarDataSet (entries, "운동별 현황");
+        number_barChart.setVisibleXRangeMaximum(4);
 
         Legend number_legend = number_barChart.getLegend();
         number_legend.setPosition(Legend.LegendPosition.BELOW_CHART_CENTER);
+        number_legend.setEnabled(true);
 
-        Legend day_legend = day_barChart.getLegend();
-        day_legend.setPosition(Legend.LegendPosition.BELOW_CHART_CENTER);
-
-        depenses.setAxisDependency(YAxis.AxisDependency.LEFT);
+        depenses.setAxisDependency(YAxis.AxisDependency.RIGHT);
         depenses.setValueTextSize(10);
 
         ArrayList<String> labels = new ArrayList<String>();
@@ -255,29 +228,78 @@ public class CurrentActivity extends AppCompatActivity {
         //depenses.setColors(ColorTemplate.JOYFUL_COLORS);
         depenses.setColor(Color.rgb(0,136,255));
 
-        barChart.setDescription("");
-        barChart.getLegend().setEnabled(false);
+        number_barChart.setDescription("");
+        number_barChart.getLegend().setEnabled(false);
 
-        barChart.setData(data);
-        barChart.animateXY(1000,1000);
-        barChart.invalidate();
+        number_barChart.setData(data);
+        number_barChart.animateXY(1000,1000);
+        number_barChart.invalidate();
 
-        YAxis leftAxis = barChart.getAxisLeft();
-        leftAxis.setLabelCount(6, false);
-        leftAxis.setGranularityEnabled(true);
+        YAxis leftAxis = number_barChart.getAxisLeft();
+        leftAxis.setLabelCount(5, true);
+        leftAxis.setAxisMinValue(0);
         leftAxis.setGranularity(0.1f);
+        number_barChart.getAxisRight().setDrawLabels(false);
 
-        Legend l = barChart.getLegend();
+        Legend l = number_barChart.getLegend();
+        l.setFormSize(9f);
+        l.setTextSize(11f);
+        l.setXEntrySpace(4f);
+    }
+
+    private void DayBarChartGraph(ArrayList<String> labelList, ArrayList<Integer> valList) {
+
+        BarChart day_barChart = findViewById(R.id.current_day_chart);
+
+        ArrayList<BarEntry> entries = new ArrayList<>();
+
+        for(int i=0; i < valList.size();i++){
+            entries.add(new BarEntry(valList.get(i), i));
+        }
+
+        BarDataSet depenses = null;
+        depenses = new BarDataSet (entries, "날짜별 현황");
+
+        Legend day_legend = day_barChart.getLegend();
+        day_legend.setPosition(Legend.LegendPosition.BELOW_CHART_CENTER);
+        day_legend.setEnabled(true);
+
+        depenses.setAxisDependency(YAxis.AxisDependency.RIGHT);
+        depenses.setValueTextSize(10);
+
+        ArrayList<String> labels = new ArrayList<String>();
+
+        for(int i=0; i < labelList.size(); i++){
+            String labelTemp = (String) labelList.get(i);
+            String temp = labelTemp.substring(0,2) + "-" + labelTemp.substring(3,5);
+            labels.add(temp);
+        }
+
+        BarData data = new BarData(labels,depenses); // 라이브러리 v3.x 사용하면 에러 발생함
+        //depenses.setColors(ColorTemplate.VORDIPLOM_COLORS);
+        //depenses.setColors(ColorTemplate.JOYFUL_COLORS);
+        depenses.setColor(Color.rgb(0,136,255));
+
+        day_barChart.setDescription("");
+        day_barChart.getLegend().setEnabled(false);
+
+        day_barChart.setData(data);
+        day_barChart.animateXY(1000,1000);
+        day_barChart.invalidate();
+
+        YAxis leftAxis = day_barChart.getAxisLeft();
+        leftAxis.setLabelCount(5, true);
+        leftAxis.setAxisMinValue(0);
+        leftAxis.setGranularityEnabled(true);
+        leftAxis.setGranularity(1f);
+        day_barChart.getAxisRight().setDrawLabels(false);
+
+        Legend l = day_barChart.getLegend();
         l.setForm(Legend.LegendForm.SQUARE);
         l.setFormSize(9f);
         l.setTextSize(11f);
         l.setXEntrySpace(4f);
-
-
     }
-
-
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -287,7 +309,6 @@ public class CurrentActivity extends AppCompatActivity {
                 return true;
 
             case R.id.action_settings:
-
                 Toast.makeText(getApplicationContext(), "환경설정 버튼 클릭됨", Toast.LENGTH_LONG).show();
                 return true;
         }

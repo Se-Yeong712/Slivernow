@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity{
         t_date = (TextView) findViewById(R.id.date);
         long now = System.currentTimeMillis();
         Date date = new Date(now);
-        SimpleDateFormat sdfNow = new SimpleDateFormat("yyyy년MM월dd일");
+        SimpleDateFormat sdfNow = new SimpleDateFormat("yyyy년 MM월 dd일");
         String formatDate = sdfNow.format(date);
 
         t_date.setText(formatDate);

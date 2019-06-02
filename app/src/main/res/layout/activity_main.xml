@@ -60,7 +60,8 @@
                     android:layout_width="340dp"
                     android:layout_height="430dp"
                     android:background="@drawable/tab3_btn"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:paddingBottom="30dp">
                     <!--<ImageView
                         android:layout_width="150dp"
                         android:layout_height="150dp"
@@ -80,36 +81,113 @@
                         android:text="오늘 날짜"
                         android:layout_gravity="center"
                         android:layout_marginTop="10dp"/>
+
                     <TextView
+                        android:id="@+id/article_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#000000"
+                        android:textSize="27dp"
+                        android:text="꽈당! 집안도 위험, 노인 건강 관리 낙상사고 예방법"
+                        android:layout_gravity="center"
+                        android:gravity="center_horizontal"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="50dp"/>
+
+                    <TextView
+                        android:id="@+id/article_content_sub1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="#000000"
-                        android:textSize="20dp"
-                        android:text="안녕하세요 :)"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginLeft="10dp"/>
+                        android:textSize="27dp"
+                        android:text="1) 규칙적인 운동"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="20dp"/>
+
                     <TextView
+                        android:id="@+id/article_content1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="#000000"
-                        android:textSize="20dp"
-                        android:text="여러분들을 위한 '실버나우' 정보를 곧 업데이트할 예정입니다. 다양하고 유익한 정보가 여러분을 기다리고 있으니 조금만 기다려주세요."
+                        android:textSize="22dp"
+                        android:text="균형 감각과 신체 조절 능력을 개선하기 위해 규칙적인 신체 활동에 참여합니다."
                         android:layout_marginTop="3dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"/>
+
                     <TextView
+                        android:id="@+id/article_content_sub2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="#000000"
-                        android:textSize="20dp"
-                        android:text="감사합니다 :)"
-                        android:layout_marginTop="5dp"
+                        android:textSize="27dp"
+                        android:text="2) 위험 요인 제거"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="20dp"/>
+
+                    <TextView
+                        android:id="@+id/article_content2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#000000"
+                        android:textSize="22dp"
+                        android:text="발에 걸려 넘어질 수 있는 전선, 책, 신발 등 주변 환경에서 위험 요인이 되는 것들을 제거합니다."
+                        android:layout_marginTop="3dp"
+                        android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"/>
-                    <ImageView
-                        android:layout_width="300dp"
-                        android:layout_height="300dp"
-                        android:layout_gravity="center"
-                        android:src="@drawable/timeline"/>
+
+                    <TextView
+                        android:id="@+id/article_content_sub3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#000000"
+                        android:textSize="27dp"
+                        android:text="3) 약 살펴보기"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="20dp"/>
+
+                    <TextView
+                        android:id="@+id/article_content3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#000000"
+                        android:textSize="22dp"
+                        android:text="약사와 함께 현재 복용하고 있는 약, 집에 보관하고 있는 상비약을 살펴보세요. 어떤 약들을 현기증을 유발하거나 졸리게 만들지도 모릅니다."
+                        android:layout_marginTop="3dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"/>
+
+                    <TextView
+                        android:id="@+id/article_content_sub4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#000000"
+                        android:textSize="27dp"
+                        android:text="4) 정기적인 시력검사"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="20dp"/>
+
+                    <TextView
+                        android:id="@+id/article_content4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#000000"
+                        android:textSize="22dp"
+                        android:text="시력이 떨어져 장애물을 발견하지 못하는 것도 낙상의 원인이 되는 만큼 1년에 한 번은 시력검사를 받도록합니다"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"/>
+
                 </LinearLayout>
                 </ScrollView>
             </LinearLayout>

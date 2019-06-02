@@ -121,7 +121,7 @@ public class CurrentActivity extends AppCompatActivity {
             CurrentPost post = new CurrentPost(day, exer1, exer2, exer3,exer4);
             postValues = post.toMap();
         }
-        childUpdates.put("/board1/" + searchDay, postValues);
+        childUpdates.put("/board/" + searchDay, postValues);
         databaseReference.updateChildren(childUpdates);
     }*/
 
@@ -129,7 +129,7 @@ public class CurrentActivity extends AppCompatActivity {
 
         Database = FirebaseDatabase.getInstance();
 
-        databaseReference = Database.getReference("board1");
+        databaseReference = Database.getReference("board");
 
 
         ValueEventListener postListener = new ValueEventListener() {

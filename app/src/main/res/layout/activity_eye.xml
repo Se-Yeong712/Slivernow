@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="s2017s16.kr.hs.mirim.silvernow.EyeActivity"
+    tools:context="s2017s16.kr.hs.mirim.silvernow.manual.eye.EyeActivity"
     android:orientation="vertical"
     android:background="#E8E8E8"
     android:layout_gravity="center">
@@ -19,10 +19,10 @@
             android:layout_height="wrap_content"
             android:textColor="#ffffff"
             android:text="SILVER NOW"
-            android:textSize="20dp"
-
+            android:textSize="30dp"
+            android:textStyle="bold"
             android:textAlignment="center"
-            android:layout_marginLeft="350px"
+            android:layout_marginLeft="250px"
             />
     </android.support.v7.widget.Toolbar>
 
@@ -31,14 +31,13 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
-        android:layout_marginTop="70dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginTop="65dp"
+        android:layout_marginBottom="10dp"
         >
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         >
 
             <LinearLayout
@@ -58,7 +57,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:gravity="center"
-                    android:text="눈 운동"
+                    android:text="눈 굴리기"
                     android:textColor="#000000"
                     android:textSize="40sp"
                     android:textStyle="bold"
@@ -68,7 +67,7 @@
                 <ImageView
                     android:layout_width="264dp"
                     android:layout_height="220dp"
-                    android:src="@drawable/eye"
+                    android:src="@drawable/eye_roll"
                     android:layout_marginBottom="10dp"
                     android:layout_gravity="center"
                     android:padding="10dp"
@@ -80,7 +79,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
-                    android:text="1. 초점을 맞추지 않은 채로 가볍게 왼쪽을 보세요."
+                    android:text="1) 의자에 바른 자세로 앉습니다."
                     android:textColor="@android:color/black"
                     android:textSize="25sp" />
                 <TextView
@@ -89,7 +88,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
-                    android:text="2. 눈을 왼쪽에 위치한 채 1초 정도 유지합니다."
+                    android:text="2) 눈을 상하좌우 차례대로 돌려줍니다."
                     android:textColor="@android:color/black"
                     android:textSize="25sp"/>
                 <TextView
@@ -98,7 +97,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
-                    android:text="3. 방향을 반대쪽으로 돌려 오른쪽을 보세요."
+                    android:text="3)2번을 한후 30초간 쉬고 다시 반복해줍니다."
                     android:textColor="@android:color/black"
                     android:textSize="25sp" />
                 <TextView
@@ -107,28 +106,16 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
-                    android:text="4. 똑같이 1초 정도 유지합니다."
+                    android:text="4)5세트 반복합니다."
                     android:textColor="@android:color/black"
                     android:textSize="25sp"/>
-
-                <TextView
-                    android:layout_marginTop="5dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    android:text="5. 위의 방법을 반복합니다."
-                    android:textColor="@android:color/black"
-                    android:textSize="25sp"/>
-
                 <Button
                     android:id="@+id/b_exercise"
                     android:layout_marginTop="20dp"
-                    android:layout_width="350dp"
+                    android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/exercise_start_btn"
                     android:layout_gravity="center"
-                    android:padding="10dp"
                     android:text="지금 시작하기"
                     android:textColor="#ffffff"
                     android:textSize="30sp" />

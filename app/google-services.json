@@ -15,6 +15,30 @@
       },
       "oauth_client": [
         {
+          "client_id": "1042138817540-1bo46cir2b6lqobbbqe14svurn9oa5oi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "s2017s16.kr.hs.mirim.silvernow",
+            "certificate_hash": "803d2256b910984ce20bcb8cb9159562633f87ce"
+          }
+        },
+        {
+          "client_id": "1042138817540-2u6o3qht0jl0jg4mee50o4c3aegi6nhj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "s2017s16.kr.hs.mirim.silvernow",
+            "certificate_hash": "4b338cc38064ef88e33ddc564e6f2e4c2f5bc542"
+          }
+        },
+        {
+          "client_id": "1042138817540-b4mgujom08ju6ql3mkd3qs8m3hvrpuhe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "s2017s16.kr.hs.mirim.silvernow",
+            "certificate_hash": "b510a3d6417aff031e4b41753778c10115aa268f"
+          }
+        },
+        {
           "client_id": "1042138817540-ruhujlgl2dbm8hu2uiq6v2vvjpghh8na.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

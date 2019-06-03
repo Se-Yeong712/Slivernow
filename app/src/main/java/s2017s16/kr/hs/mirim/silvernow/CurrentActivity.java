@@ -101,13 +101,11 @@ public class CurrentActivity extends AppCompatActivity {
     }
 
 /*    public void postFirebaseDatabase(boolean add){
-
         String day = searchDay;
         int exer1 = 1;
         int exer2 = 5;
         int exer3 = 2;
         int exer4 = 3;
-
         databaseReference = FirebaseDatabase.getInstance().getReference();
         Map<String, Object> childUpdates = new HashMap<>();
         Map<String, Object> postValues = null;

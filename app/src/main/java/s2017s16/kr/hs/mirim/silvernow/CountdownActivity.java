@@ -16,9 +16,9 @@ public class CountdownActivity extends AppCompatActivity {
         setContentView(R.layout.activity_countdown);
 
 
-        ImageView count_gif = findViewById(R.id.count_gif);
-        CountdownActivity.GlideDrawableImageViewTarget count_target = new CountdownActivity.GlideDrawableImageViewTarget(count_gif);
-        Glide.with(this).load(R.raw.countdown2).into(count_gif);
+//        //ImageView count_gif = findViewById(R.id.count_gif);
+//        CountdownActivity.GlideDrawableImageViewTarget count_target = new CountdownActivity.GlideDrawableImageViewTarget(count_gif);
+//        Glide.with(this).load(R.raw.countdown2).into(count_gif);
         startCountDown();
 
     }

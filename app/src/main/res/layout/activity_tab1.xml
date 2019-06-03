@@ -1,0 +1,105 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/BackGround">
+
+    //tab1
+    <LinearLayout
+        android:id="@+id/tab1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="8dp">
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingBottom="10dp">
+            <LinearLayout
+                android:layout_width="345dp"
+                android:layout_height="430dp"
+                android:background="@drawable/tab3_btn"
+                android:orientation="vertical"
+                >
+                <!--<ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/obstacle"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="공사중입니다"
+                    android:textColor="#000000"
+                    android:textSize="30dp"/>-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="25dp"
+                    android:text="'눈'에 대한 상식!"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"/>
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="15dp"
+                    android:text="오늘 날짜"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="15dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    android:text="안녕하세요 :)\n첫번째 건강상식으로 여러분을 만나게 된 '실버나우'입니다. 이번 주에는 눈에 대해 잘 알려져 있지만 잘못된 상식에 대해서 알아보겠습니다.  "
+                    android:layout_marginTop="3dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    android:text="Q) 안경을 쓰면 시력이 더 나빠지나요?\nA) 아닙니다! 안경은 시력교정 도구일 뿐 시력을 더 저하시키지는 않습니다. 시력이 저하되는 것은 근시가 진행되는 것이고, 안경과 시력이 저하되는 것은 무관합니다."
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    android:text="Q) 최근 미세먼지가 이슈가 되고 있는데 눈을 특별히 조심해야 할까요?\nA) 미세먼지에 의해 눈이 오염되는 것을 방지해야 하긴 하지만 특히 최근 눈 수술을 받으신 분이라면 더욱 조심해야 합니다. 수술 부위가 미세먼지에 노출되어 감염이나 염증이 생길 수 있기 때문입니다"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    android:text="Q) 눈 영양제를 섭취하는 것이 시력 향상에 도움이 될까요?\nA) 일부 질환에 효과를 준다는 연구 결과가 있습니다. 일반적으로는 생선, 과일, 채소 등 음식물을 통해 도움을 받을 수 있습니다."
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    android:text="이렇게 오늘은 '눈'에 대한 상식에 대해 알아보았는데요, 모두 눈 관리에 힘써 건강한 눈을 만들어요!"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"/>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</RelativeLayout>
+

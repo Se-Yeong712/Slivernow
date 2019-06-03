@@ -8,9 +8,15 @@
     android:orientation="vertical"
     android:background="#0088ff">
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/splash"
-        android:layout_gravity="center" />
-
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/logoo"
+        android:layout_gravity="center"
+        android:layout_marginTop="90dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="350dp"
+        android:text="ⓒ 2019. 앤듀로이드 inc. all right reserved"
+        android:layout_gravity="center"/>
 </LinearLayout>

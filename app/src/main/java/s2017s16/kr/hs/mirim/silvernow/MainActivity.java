@@ -18,7 +18,11 @@ import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
+<<<<<<< HEAD
     //static ViewPager pager;
+=======
+    static ViewPager pager;
+>>>>>>> 5034798851344581650327a458a502f6d9e5a875
     Toolbar toolbar;
 
     Button btn_first;
@@ -41,9 +45,15 @@ public class MainActivity extends AppCompatActivity {
         btn_second = (Button)findViewById(R.id.btn_second);
         btn_third = (Button)findViewById(R.id.btn_third);
 
+<<<<<<< HEAD
 //        pager = (ViewPager)findViewById(R.id.pager);
 //        pager.setAdapter(new pagerAdapter(getSupportFragmentManager()));
 //        pager.setCurrentItem(1);
+=======
+        pager = (ViewPager)findViewById(R.id.pager);
+        pager.setAdapter(new pagerAdapter(getSupportFragmentManager()));
+        pager.setCurrentItem(1);
+>>>>>>> 5034798851344581650327a458a502f6d9e5a875
         btn_second.setBackgroundColor(getResources().getColor(R.color.TabSelected));
 
         View.OnClickListener movePageListener = new View.OnClickListener()
@@ -68,7 +78,11 @@ public class MainActivity extends AppCompatActivity {
                         btn_third.setBackgroundColor(getResources().getColor(R.color.TabSelected));
                         break;
                 }
+<<<<<<< HEAD
 //                pager.setCurrentItem(tag);
+=======
+                pager.setCurrentItem(tag);
+>>>>>>> 5034798851344581650327a458a502f6d9e5a875
             }
         };
 
@@ -80,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
         btn_third.setTag(2);
     }
 
+<<<<<<< HEAD
 //    private class pagerAdapter extends FragmentStatePagerAdapter
 //    {
 //        public pagerAdapter(FragmentManager fm )
@@ -126,6 +141,54 @@ public class MainActivity extends AppCompatActivity {
         }
         return false;
     }//onOptionsItemSelected
+=======
+    private class pagerAdapter extends FragmentStatePagerAdapter
+    {
+        public pagerAdapter(FragmentManager fm )
+        {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            switch(position)
+            {
+                case 0:
+                    return new Tab1Activity();
+                case 1:
+
+                    return new Tab2Activity();
+                case 2:
+
+                    return new Tab3Activity();
+                default:
+                    return null;
+            }
+        }
+
+        @Override
+        public int getCount() {
+            // total page count
+            return 3;
+        }
+
+    }
+
+@Override
+public boolean onOptionsItemSelected(MenuItem item) {
+    switch (item.getItemId()) {
+        case android.R.id.home:
+            finish();
+            return true;
+
+        case R.id.action_settings:
+
+            Toast.makeText(getApplicationContext(), "환경설정 버튼 클릭됨", Toast.LENGTH_LONG).show();
+            return true;
+    }
+    return false;
+}//onOptionsItemSelected
+>>>>>>> 5034798851344581650327a458a502f6d9e5a875
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

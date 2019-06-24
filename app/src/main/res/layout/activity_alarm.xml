@@ -26,6 +26,7 @@
     </android.support.v7.widget.Toolbar>
 
     <ImageView
+<<<<<<< HEAD
         android:layout_width="350dp"
         android:layout_height="350dp"
         android:src="@drawable/exercise"
@@ -36,12 +37,37 @@
     <Button
         android:id="@+id/b_stop"
         android:layout_marginTop="130dp"
+=======
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:src="@drawable/alal"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        android:textSize="35sp"
+        android:textColor="#002c64"
+        android:text="운동할 시간입니다!"/>
+
+    <Button
+        android:id="@+id/b_stop"
+        android:layout_marginTop="5dp"
+>>>>>>> 5034798851344581650327a458a502f6d9e5a875
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:background="@drawable/exercise_start_btn"
         android:layout_gravity="center"
         android:padding="10dp"
+<<<<<<< HEAD
         android:text="운동하러 가기"
+=======
+        android:text="알람 끄기"
+>>>>>>> 5034798851344581650327a458a502f6d9e5a875
         android:textSize="30dp"
         android:textColor="#ffffff"
         />

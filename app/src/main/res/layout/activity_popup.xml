@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@android:color/transparent">
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:orientation="vertical"
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+    <TextView
+        android:id="@+id/endExercise"
+        android:layout_width="match_parent"
+        android:layout_height="53sp"
+        android:text="운동이 끝났어요!"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:layout_marginBottom="50dp"
+        />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="53sp"
+            android:text="돌아가기"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            />
+
+        <Button
+            android:id="@+id/okBtn"
+            android:text="확인"
+            android:layout_width="match_parent"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:textSize="20sp"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"/>
+</LinearLayout>
+
+
+</LinearLayout>

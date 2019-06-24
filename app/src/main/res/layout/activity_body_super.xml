@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="s2017s16.kr.hs.mirim.silvernow.manual.body.BodySuperActivity"
+    android:orientation="vertical"
+    android:background="#E8E8E8"
+    android:layout_gravity="center">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:text="SILVER NOW"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:layout_marginLeft="250px"
+            />
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="65dp"
+        android:layout_marginBottom="10dp"
+        >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/tab3_btn"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="50dp"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:text="슈퍼맨 운동"
+                    android:textColor="#000000"
+                    android:textSize="40sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="10dp"
+                    />
+
+                <ImageView
+                    android:layout_width="264dp"
+                    android:layout_height="220dp"
+                    android:src="@drawable/bodysuper"
+                    android:layout_marginBottom="10dp"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/t_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="1) 매트 위에 배가 바닥과 닿도록 누워줍니다."
+                    android:textColor="@android:color/black"
+                    android:textSize="25sp" />
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="2) 팔을 머리 위쪽으로 만세하듯이 올려주고, 다리도 어깨 넓이만큼 벌려줍니다."
+                    android:textColor="@android:color/black"
+                    android:textSize="25sp"/>
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="3) 팔과 다리를 동시에 들어올렸다가 3~4초 정도 유지한 후 다시 내려줍니다."
+                    android:textColor="@android:color/black"
+                    android:textSize="25sp" />
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="4)이 동작을 반복합니다."
+                    android:textColor="@android:color/black"
+                    android:textSize="25sp"/>
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="5) 5세트 반복합니다."
+                    android:textColor="@android:color/black"
+                    android:textSize="25sp"/>
+                <Button
+                    android:id="@+id/b_exercise"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/exercise_start_btn"
+                    android:layout_gravity="center"
+                    android:text="지금 시작하기"
+                    android:textColor="#ffffff"
+                    android:textSize="30sp" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</RelativeLayout>

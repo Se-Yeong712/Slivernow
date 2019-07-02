@@ -19,7 +19,15 @@ import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
+<<<<<<< HEAD
     //    static ViewPager pager;
+=======
+<<<<<<< HEAD
+    //static ViewPager pager;
+=======
+    static ViewPager pager;
+>>>>>>> 5034798851344581650327a458a502f6d9e5a875
+>>>>>>> f9372bc2f77d7667cb356f4437d49732136a6d06
     Toolbar toolbar;
 
     Button btn_first;
@@ -42,9 +50,21 @@ public class MainActivity extends AppCompatActivity {
         btn_second = (Button)findViewById(R.id.btn_second);
         btn_third = (Button)findViewById(R.id.btn_third);
 
+<<<<<<< HEAD
 //        pager = (ViewPager)findViewById(R.id.pager);
 //        pager.setAdapter(new pagerAdapter(getSupportFragmentManager()));
 //        pager.setCurrentItem(1);
+=======
+<<<<<<< HEAD
+//        pager = (ViewPager)findViewById(R.id.pager);
+//        pager.setAdapter(new pagerAdapter(getSupportFragmentManager()));
+//        pager.setCurrentItem(1);
+=======
+        pager = (ViewPager)findViewById(R.id.pager);
+        pager.setAdapter(new pagerAdapter(getSupportFragmentManager()));
+        pager.setCurrentItem(1);
+>>>>>>> 5034798851344581650327a458a502f6d9e5a875
+>>>>>>> f9372bc2f77d7667cb356f4437d49732136a6d06
         btn_second.setBackgroundColor(getResources().getColor(R.color.TabSelected));
         callFragment(1);
 
@@ -72,7 +92,15 @@ public class MainActivity extends AppCompatActivity {
                         callFragment(2);
                         break;
                 }
+<<<<<<< HEAD
 //                pager.setCurrentItem(tag);
+=======
+<<<<<<< HEAD
+//                pager.setCurrentItem(tag);
+=======
+                pager.setCurrentItem(tag);
+>>>>>>> 5034798851344581650327a458a502f6d9e5a875
+>>>>>>> f9372bc2f77d7667cb356f4437d49732136a6d06
             }
         };
 
@@ -86,6 +114,10 @@ public class MainActivity extends AppCompatActivity {
         btn_third.setTag(2);
     }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> f9372bc2f77d7667cb356f4437d49732136a6d06
 //    private class pagerAdapter extends FragmentStatePagerAdapter
 //    {
 //        public pagerAdapter(FragmentManager fm )
@@ -118,6 +150,7 @@ public class MainActivity extends AppCompatActivity {
 //
 //    }
 
+<<<<<<< HEAD
 
     private void callFragment(int frament_no) {
 
@@ -144,6 +177,51 @@ public class MainActivity extends AppCompatActivity {
                 transaction.replace(R.id.fragment_container, fragment3);
                 transaction.commit();
                 break;
+=======
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+
+            case R.id.action_settings:
+
+                Toast.makeText(getApplicationContext(), "환경설정 버튼 클릭됨", Toast.LENGTH_LONG).show();
+                return true;
+        }
+        return false;
+    }//onOptionsItemSelected
+=======
+    private class pagerAdapter extends FragmentStatePagerAdapter
+    {
+        public pagerAdapter(FragmentManager fm )
+        {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            switch(position)
+            {
+                case 0:
+                    return new Tab1Activity();
+                case 1:
+
+                    return new Tab2Activity();
+                case 2:
+
+                    return new Tab3Activity();
+                default:
+                    return null;
+            }
+        }
+
+        @Override
+        public int getCount() {
+            // total page count
+            return 3;
+>>>>>>> f9372bc2f77d7667cb356f4437d49732136a6d06
         }
     }
 
@@ -156,11 +234,20 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.action_settings:
 
+<<<<<<< HEAD
                 Toast.makeText(getApplicationContext(), "이미지출처\n\n나의 운동 현황 아이콘 : Icons made by Flat Icons from www.flaticon.com is licensed by CC 3.0 BY\n나의 운동 알람 아이콘 : Icons made by Flat Icons from www.flaticon.com is licensed by CC 3.0 BY\n나의 운동 알람 벨 : Icons made by Freepik from www.flaticon.com is licensed by CC 3.0 BY\n운동마당 눈 : Icons made by Freepik from www.flaticon.com is licensed by CC 3.0 BY\n운동마당 다리 : Icons made by Freepik from www.flaticon.com is licensed by CC 3.0 BY\n운동마당 팔 : Icons made by Freepik from www.flaticon.com is licensed by CC 3.0 BY\n운동마당 맨몸체조 : Icons made by Freepik from www.flaticon.com is licensed by CC 3.0 BY\n", Toast.LENGTH_LONG).show();
                 return true;
         }
         return false;
     }//onOptionsItemSelected
+=======
+            Toast.makeText(getApplicationContext(), "환경설정 버튼 클릭됨", Toast.LENGTH_LONG).show();
+            return true;
+    }
+    return false;
+}//onOptionsItemSelected
+>>>>>>> 5034798851344581650327a458a502f6d9e5a875
+>>>>>>> f9372bc2f77d7667cb356f4437d49732136a6d06
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

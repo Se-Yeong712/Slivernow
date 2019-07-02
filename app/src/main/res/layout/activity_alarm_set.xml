@@ -72,9 +72,19 @@
         android:id="@+id/btn_alarm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
+        android:src="@drawable/bell"
+=======
+<<<<<<< HEAD
         android:src="@drawable/bell"
         android:background="@android:color/transparent"
+        android:layout_marginTop="150dp"
+=======
+        android:src="@drawable/notification"
+>>>>>>> f9372bc2f77d7667cb356f4437d49732136a6d06
+        android:background="@android:color/transparent"
         android:layout_marginTop="100dp"
+>>>>>>> 5034798851344581650327a458a502f6d9e5a875
         android:onClick="showAlarmDialog"
         android:text="알람 설정"
         android:layout_gravity="center"
@@ -85,6 +95,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
+<<<<<<< HEAD
         android:layout_marginTop="30dp"
         android:text="그림을 눌러"
         android:textSize="25sp"
@@ -99,4 +110,27 @@
         android:text="운동할 시간에 \n알람을 맞추세요!"
         android:textSize="35sp"
         android:textColor="#000000" />
+=======
+<<<<<<< HEAD
+        android:layout_marginTop="30dp"
+        android:text="그림을 눌러"
+        android:textSize="25sp"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="운동할 시간에 \n알람을 맞추세요!"
+        android:textSize="35sp"
+        android:textColor="#000000" />
+=======
+        android:layout_margin="30dp"
+        android:text="그림을 눌러 \n 운동할 시간에 \n 알림을 맞추세요!"
+        android:textSize="25sp"
+        android:textColor="#002c64"/>
+>>>>>>> 5034798851344581650327a458a502f6d9e5a875
+>>>>>>> f9372bc2f77d7667cb356f4437d49732136a6d06
 </LinearLayout>

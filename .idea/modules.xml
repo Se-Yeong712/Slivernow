@@ -4,6 +4,10 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Slivernow.iml" filepath="$PROJECT_DIR$/.idea/Slivernow.iml" />
       <module fileurl="file://$PROJECT_DIR$/Slivernow.iml" filepath="$PROJECT_DIR$/Slivernow.iml" />
+<<<<<<< HEAD
+      <module fileurl="file://$PROJECT_DIR$/.idea/Slivernow.iml" filepath="$PROJECT_DIR$/.idea/Slivernow.iml" />
+=======
+>>>>>>> 5034798851344581650327a458a502f6d9e5a875
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

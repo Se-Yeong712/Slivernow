@@ -18,10 +18,10 @@
             android:layout_height="wrap_content"
             android:textColor="#ffffff"
             android:text="SILVER NOW"
-            android:textSize="30dp"
+            android:textSize="20dp"
             android:textStyle="bold"
             android:textAlignment="center"
-            android:layout_marginLeft="250px"
+            android:layout_marginLeft="390px"
             />
     </android.support.v7.widget.Toolbar>
 
@@ -46,7 +46,7 @@
                 android:id="@+id/textview_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="플랭크"
+                android:text="온몸 박수 운동"
                 android:textColor="#000000"
                 android:textSize="30sp"
                 android:gravity="center"

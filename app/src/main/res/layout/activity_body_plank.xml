@@ -19,10 +19,10 @@
             android:layout_height="wrap_content"
             android:textColor="#ffffff"
             android:text="SILVER NOW"
-            android:textSize="30dp"
+            android:textSize="20dp"
             android:textStyle="bold"
             android:textAlignment="center"
-            android:layout_marginLeft="250px"
+            android:layout_marginLeft="230px"
             />
     </android.support.v7.widget.Toolbar>
 
@@ -57,7 +57,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:gravity="center"
-                    android:text="플랭크"
+                    android:text="온몸 박수 운동"
                     android:textColor="#000000"
                     android:textSize="40sp"
                     android:textStyle="bold"
@@ -67,7 +67,7 @@
                 <ImageView
                     android:layout_width="264dp"
                     android:layout_height="220dp"
-                    android:src="@drawable/bodysuper"
+                    android:src="@drawable/body3"
                     android:layout_marginBottom="10dp"
                     android:layout_gravity="center"
                     android:padding="10dp"
@@ -79,7 +79,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
-                    android:text="1) 바닥에 엎드려 무릎을 대고, 손바닥과 팔꿈치로 중심을 잡아줍니다."
+                    android:text="1) 다리를 어깨 넓이만큼 벌린 후 바른 자세로 섭니다."
                     android:textColor="@android:color/black"
                     android:textSize="25sp" />
                 <TextView
@@ -88,7 +88,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
-                    android:text="2) 무릎을 떼고 몸을 일자로 만들면서 세워 올립니다."
+                    android:text="2) 두 팔을 머리 위로 올려 박수를 한 번 칩니다."
                     android:textColor="@android:color/black"
                     android:textSize="25sp"/>
                 <TextView
@@ -97,7 +97,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
-                    android:text="3) 자세를 유지합니다."
+                    android:text="3) 다리를 무릎을 굽힌 채 수직으로 올리면서 다리 사이로 박수를 한 번 칩니다."
                     android:textColor="@android:color/black"
                     android:textSize="25sp" />
                 <TextView

@@ -82,7 +82,7 @@ public class EyeMasExerciseActivity extends AppCompatActivity {
         //ActionBar actionbar=getActionBar();
         setSupportActionBar(toolbar);
         android.support.v7.app.ActionBar actionbar = getSupportActionBar();
-        actionbar.setDisplayHomeAsUpEnabled(true);
+//        actionbar.setDisplayHomeAsUpEnabled(true);
 
 
         mediaPlayer = MediaPlayer.create(EyeMasExerciseActivity.this, R.raw.music);
@@ -301,29 +301,29 @@ public class EyeMasExerciseActivity extends AppCompatActivity {
             mediaPlayer = null;
         }
     }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                return true;
-
-            case R.id.action_settings:
-
-                Toast.makeText(getApplicationContext(), "환경설정 버튼 클릭됨", Toast.LENGTH_LONG).show();
-                return true;
-        }
-        return false;
-    }//onOptionsItemSelected
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        //return super.onCreateOptionsMenu(menu);
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.menu, menu);
-        return true;
-    }
+//
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        switch (item.getItemId()) {
+//            case android.R.id.home:
+//                finish();
+//                return true;
+//
+//            case R.id.action_settings:
+//
+//                Toast.makeText(getApplicationContext(), "환경설정 버튼 클릭됨", Toast.LENGTH_LONG).show();
+//                return true;
+//        }
+//        return false;
+//    }//onOptionsItemSelected
+//
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        //return super.onCreateOptionsMenu(menu);
+//        MenuInflater menuInflater = getMenuInflater();
+//        menuInflater.inflate(R.menu.menu, menu);
+//        return true;
+//    }
 
     private class GlideDrawableImageViewTarget {
         public GlideDrawableImageViewTarget(ImageView gif) {

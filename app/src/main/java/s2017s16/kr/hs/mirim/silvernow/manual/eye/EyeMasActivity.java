@@ -44,19 +44,10 @@ public class EyeMasActivity extends AppCompatActivity {
                 finish();
                 return true;
 
-            case R.id.action_settings:
 
-                Toast.makeText(getApplicationContext(), "환경설정 버튼 클릭됨", Toast.LENGTH_LONG).show();
-                return true;
         }
         return false;
     }//onOptionsItemSelected
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        //return super.onCreateOptionsMenu(menu);
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.menu, menu);
-        return true;
-    }
+
 }

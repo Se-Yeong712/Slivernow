@@ -25,7 +25,7 @@ class GymBodyActivity : AppCompatActivity() {
     var dataList_body = arrayListOf<GymDataModel>(
             GymDataModel("허리 돌리기", R.drawable.body,  BodyActivity::class.java),
             GymDataModel("슈퍼맨 운동",R.drawable.bodysuper, BodySuperActivity::class.java),
-            GymDataModel("플랭크", R.drawable.bodysuper, BodyPlankActivity::class.java)
+            GymDataModel("온몸 박수 운동", R.drawable.body3, BodyPlankActivity::class.java)
     )
 
 

@@ -17,10 +17,10 @@
             android:layout_height="wrap_content"
             android:textColor="#ffffff"
             android:text="SILVER NOW"
-            android:textSize="30dp"
+            android:textSize="20dp"
             android:textStyle="bold"
             android:textAlignment="center"
-            android:layout_marginLeft="250px"
+            android:layout_marginLeft="230px"
             />
     </android.support.v7.widget.Toolbar>
     <!--<ScrollView
@@ -72,7 +72,7 @@
         android:id="@+id/btn_alarm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/notification"
+        android:src="@drawable/bell"
         android:background="@android:color/transparent"
         android:layout_marginTop="100dp"
         android:onClick="showAlarmDialog"
@@ -85,8 +85,18 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
-        android:layout_margin="30dp"
-        android:text="그림을 눌러 \n 운동할 시간에 \n 알림을 맞추세요!"
+        android:layout_marginTop="30dp"
+        android:text="그림을 눌러"
         android:textSize="25sp"
-        android:textColor="#002c64"/>
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="운동할 시간에 \n알람을 맞추세요!"
+        android:textSize="35sp"
+        android:textColor="#000000" />
 </LinearLayout>
